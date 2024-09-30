@@ -5,14 +5,15 @@ https://images.template.net/wp-content/uploads/2018/11/Free-Basic-Resume-Templat
 3) create forgot password page. 
 4) create change password page 
 
-4) website for recipe in gujarati language
+5) website for recipe in gujarati language (use only html 4)
 
 types of web page 
     1) home page 
         https://gujarati.foodviva.com/
-     Logo 
-     Menu 
-        6 links, one link for each category
+     Menu (Common for all 43 pages)
+        Logo
+        Site Name 
+        Home, 6 links, one link for each category
      12 recipe (4 recipe in each line)
         Link 
             Photo 
