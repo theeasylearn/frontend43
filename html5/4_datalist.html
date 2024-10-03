@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Search bus routes</h1>
+    <hr />
+    <!-- horizontal form (design type 2) -->
+    <form action="success.html" method="post">
+        <table align="center" cellpadding="10" width="50%" border="2">
+            <tr>
+                <td>
+                    Source
+                </td>
+                <td>
+                    <input type="text" name="soiurce" required placeholder="Pickup point"
+                    list="cities" />
+                </td>
+            </tr>
+            <tr>
+                <td>Destination</td>
+                <td>
+                    <input type='text' name='destination' required placeholder="Drop point"
+                    list="cities" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Journey date
+                </td>
+                <td>
+                    <input type="date" name="journey_date" required min="2024-09-27" max="2024-10-27" />
+                </td>
+            </tr>
+            <tr>
+                <td>No of seats</td>
+                <td>
+                    <select name="seats" required>
+                        <option value="1">1</option>
+                        <option value="1">2</option>
+                        <option value="1">3</option>
+                        <option value="1">4</option>
+                        <option value="1">5</option>
+                        <option value="1">6</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Bus type</td>
+                <td>
+                    <label for="ac">
+                        <input id="ac" type="radio" name="bus_type" value="1" required /> AC
+                    </label>
+                    <label for="express">
+                        <input id="express" type="radio" name="bus_type" value="2" required /> Express
+                    </label>
+                    <label for="local">
+                        <input id="local" type="radio" name="bus_type" value="3" required /> Local
+                    </label>
+                    <label for="sleeper">
+                        <input id="sleeper" type="radio" name="bus_type" value="4" required /> Sleeper
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" name="submit" value="Search bus" />
+                    <input type="reset" name="reset" value="clear all" />
+                </td>
+                
+            </tr>
+        </table>
+        <datalist id="cities">
+            <option value="Mumbai">
+            <option value="Delhi">
+            <option value="Bangalore">
+            <option value="Hyderabad">
+            <option value="Ahmedabad">
+            <option value="Chennai">
+            <option value="Kolkata">
+            <option value="Surat">
+            <option value="Pune">
+            <option value="Jaipur">
+            <option value="Lucknow">
+            <option value="Kanpur">
+            <option value="Nagpur">
+            <option value="Indore">
+            <option value="Thane">
+            <option value="Bhopal">
+            <option value="Visakhapatnam">
+            <option value="Pimpri-Chinchwad">
+            <option value="Patna">
+            <option value="Vadodara">
+            <option value="Ghaziabad">
+            <option value="Ludhiana">
+            <option value="Agra">
+            <option value="Nashik">
+            <option value="Faridabad">
+            <option value="Meerut">
+            <option value="Rajkot">
+            <option value="Kalyan-Dombivli">
+            <option value="Vasai-Virar">
+            <option value="Aurangabad">
+            <option value="Solapur">
+            <option value="Chandigarh">
+            <option value="Coimbatore">
+            <option value="Jabalpur">
+            <option value="Mohali">
+            <option value="Thrissur">
+            <option value="Tiruchirappalli">
+            <option value="Salem">
+            <option value="Hubli-Dharwad">
+            <option value="Mangalore">
+            <option value="Bhiwandi">
+            <option value="Gorakhpur">
+            <option value="Jodhpur">
+            <option value="Raipur">
+            <option value="Amritsar">
+            <option value="Bhubaneswar">
+            <option value="Durgapur">
+            <option value="Bilaspur">
+            <option value="Dehradun">
+            <option value="Ranchi">
+            <option value="Agartala">
+            <option value="Siliguri">
+            <option value="Aligarh">
+            <option value="Mathura">
+            <option value="Jhansi">
+            <option value="Udaipur">
+            <option value="Kakinada">
+            <option value="Rourkela">
+            <option value="Tirupati">
+            <option value="Jamshedpur">
+            <option value="Gwalior">
+            <option value="Kota">
+            <option value="Bikaner">
+            <option value="Bhilai">
+            <option value="Vellore">
+            <option value="Srinagar">
+            <option value="Kochi">
+            <option value="Kozhikode">
+            <option value="Sagar">
+            <option value="Bardhaman">
+            <option value="Durg">
+            <option value="Nanded Waghala">
+            <option value="Bhatpara">
+            <option value="Gandhinagar">
+            <option value="Saharanpur">
+            <option value="Tumkur">
+            <option value="Dibrugarh">
+            <option value="Haldwani">
+            <option value="Solan">
+            <option value="Mysuru">
+            <option value="Tirupur">
+            <option value="Puducherry">
+            <option value="Raurkela">
+            <option value="Shivamogga">
+            <option value="Kottayam">
+            <option value="Hosur">
+            <option value="Muzaffarpur">
+            <option value="Kharagpur">
+            <option value="Bhubaneshwar">
+            <option value="Thiruvananthapuram">
+            <option value="Ahmednagar">
+            <option value="Moradabad">
+            <option value="Ambala">
+            <option value="Sangli-Miraj & Kupwad">
+            <option value="Tirunelveli">
+            <option value="Malegaon">
+            <option value="Hapur">
+            <option value="Panchkula">
+            <option value="Jammu">
+            <option value="Navi Mumbai">
+            <option value="Raebareli">
+            <option value="Satna">
+            <option value="Gaya">
+            <option value="Ujjain">
+            <option value="Cuttack">
+            <option value="Panipat">
+            <option value="Noida">
+            <option value="Patiala">
+            <option value="Bareilly">
+            <option value="Varanasi">
+            <option value="Ajmer">
+            <option value="Gangtok">
+            <option value="Shimla">
+            <option value="Imphal">
+            <option value="Alwar">
+            <option value="Hazaribagh">
+            <option value="Belgaum">
+            <option value="Amravati">
+        </datalist>
+    </form>
+</body>
+</html>
