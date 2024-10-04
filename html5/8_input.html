@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>new input types in html</h1>
+    <form action="success.html" method="post">
+        <table align="center" width="80%" cellpadding="10" border="1">
+            <tr>
+                <td width="30%">
+                    <label for="Email">Email</label>
+                </td>
+                <td>
+                    <input type="email" name="Email" id="Email" required  />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="birthdatetime">Birth Date & time</label>
+                </td>
+                <td>
+                    <input type="datetime-local" name="birthdatetime" id="birthdatetime" required  />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="color">Skin Color</label>
+                </td>
+                <td>
+                    <input type="color" name="color" id="color" required  />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Height">Height</label>
+                </td>
+                <td>
+                    <input type="number" name="Height" id="Height" step="0.01" required  />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="salary">Salary Expectation </label>
+                </td>
+                <td>
+                    <input type="text" name="salary" id="salary" placeholder="Salary"
+                    min="5000" max="25000" required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="photo">Photo</label>
+                </td>
+                <td>
+                    <input type="file" name="photo" id="photo" accept="image/*" required multiple />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Submit this form" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
