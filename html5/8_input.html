@@ -7,14 +7,14 @@
 </head>
 <body>
     <h1>new input types in html</h1>
-    <form action="success.html" method="post">
+    <form action="success.html" method="post" autocomplete="on" >
         <table align="center" width="80%" cellpadding="10" border="1">
             <tr>
                 <td width="30%">
                     <label for="Email">Email</label>
                 </td>
                 <td>
-                    <input type="email" name="Email" id="Email" required  />
+                    <input type="email" name="Email" id="Email" required autocomplete="off"  autofocus />
                 </td>
             </tr>
             <tr>
@@ -55,12 +55,14 @@
                     <label for="photo">Photo</label>
                 </td>
                 <td>
-                    <input type="file" name="photo" id="photo" accept="image/*" required multiple />
+                    <input type="file" name="photo" id="photo" accept="image/*" required  />
                 </td>
             </tr>
             <tr>
                 <td colspan="2" align="center">
-                    <input type="submit" value="Submit this form" />
+                    <input type="submit" value="Submit this form as teacher" />
+                    <input type="submit" value="Submit this form as student"
+                    formaction="success2.html" />
                 </td>
             </tr>
         </table>

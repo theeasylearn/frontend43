@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Example of Pattern Attribute</h1>
+    <form action="success.html" method="post">
+        <table border="1" align="center" cellpadding="10">
+            <tr>
+                <td>Pan card</td>
+                <td>
+                    <!-- PAN Card pattern corrected -->
+                    <input type="text" name="pancard" 
+                           pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" 
+                           title="Please enter a valid PAN card number (e.g. ABCDE1234F)" 
+                           required />
+                </td>
+            </tr>
+            <tr>
+                <td>Aadhaar Card</td>
+                <td>
+                    <!-- Aadhaar Card pattern corrected -->
+                    <input type="text" name="aadharcard" 
+                           pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}" 
+                           title="Please enter a valid Aadhaar number (e.g. 1234-5678-9101)" 
+                           required />
+                </td>
+            </tr>
+            <tr>
+                <td>Voter ID</td>
+                <td>
+                    <!-- Voter ID pattern corrected -->
+                    <input type="text" name="votercard" 
+                           pattern="[A-Z]{3}[0-9]{7}" 
+                           title="Please enter a valid Voter ID (e.g. ABC1234567)" 
+                           required />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Submit form" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
