@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* class selector style */
+        .box 
+        {
+            height: 100px;
+            width:100px;
+            border: 1px solid black;
+            display: inline-block; 
+            font-size: xx-large;
+            text-align: center;
+        }
+        .odd 
+        {
+            background-color: blue;
+            color:cyan;
+        }
+
+        .even
+        {
+            background-color: cyan;
+            color:blue;
+        }
+        /* tag will be displayed as circle only if height and width are same */
+        .circle
+        {
+            border-radius: 100%;
+            background-color: rebeccapurple;
+            color: white;
+        }
+        .bottom-left
+        {
+            position: absolute;
+            bottom: 0px;
+            left:0px;
+        }
+        .bottom-right
+        {
+            position: absolute;
+            bottom: 0px;
+            right:0px;
+        }
+        .top-right
+        {
+            position: absolute;
+            top:0px;
+            right: 0px;
+        }
+        .top-left
+        {
+            position: absolute;
+            top:0px;
+            left: 0px;
+            background-color: aliceblue;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <h1>Layout related properties</h1>
+    <div>
+        <div class="box odd">1</div>
+        <div class="box even">2</div>
+        <div class="box odd">3</div>
+        <div class="box even">4</div>
+        <div class="box circle">5</div>
+        <div class="box bottom-left">bottom left</div>
+        <div class="box bottom-right">bottom right</div>
+        <div class="box top-right">top right</div>
+        <div class="box top-left">top left</div>
+    </div>
+</body>
+</html>
