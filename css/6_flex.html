@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *
+        {
+            margin:0px;
+            padding:0px;
+            box-sizing: border-box;
+            letter-spacing: 1px;
+        }
+        .menu
+        {
+            background-color: aliceblue;
+            padding:10px;
+            border: 1px solid blue;
+            display: flex;
+            gap:20px; /* works inly if display:flex */
+            list-style-type: none;
+        }
+        li 
+        {
+            border: 2px solid red;
+            padding-left:10px;
+            padding-right:10px;
+        }
+        .space-between 
+        {
+            justify-content: space-between;
+        }
+        .space-around
+        {
+            justify-content: space-around;
+        }
+        .right 
+        {
+            justify-content: right;
+        }
+        .center 
+        {
+            justify-content: center;
+        }
+        .links 
+        {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            background-color: antiquewhite;
+            width:20%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flex in css</h1>
+    <ul class="menu">
+        <li>First</li>
+        <li>Second</li>
+        <li>Third</li>
+        <li>Fourth</li>
+        <li>Fifth</li>
+    </ul>
+    <ul class="menu space-between">
+        <li>First</li>
+        <li>Second</li>
+        <li>Third</li>
+        <li>Fourth</li>
+        <li>Fifth</li>
+    </ul>
+    <ul class="menu space-around">
+        <li>First</li>
+        <li>Second</li>
+        <li>Third</li>
+        <li>Fourth</li>
+        <li>Fifth</li>
+    </ul>
+    <ul class="menu right">
+        <li>First</li>
+        <li>Second</li>
+        <li>Third</li>
+        <li>Fourth</li>
+        <li>Fifth</li>
+    </ul>
+    <ul class="menu center">
+        <li>First</li>
+        <li>Second</li>
+        <li>Third</li>
+        <li>Fourth</li>
+        <li>Fifth</li>
+    </ul>
+    <div class="links">
+        <a href="1_type_universal_selector.html">First Link</a>
+        <a href="1_type_universal_selector.html">second Link</a>
+        <a href="1_type_universal_selector.html">third Link</a>
+        <a href="1_type_universal_selector.html">fourth Link</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *
+        {
+            margin: 0px;
+            padding:0px;
+        }
+        #news 
+        {
+            border:1px solid black;
+            padding:10px;
+            background-color: aliceblue;
+        }
+
+        #news>div 
+        {
+            height:200px;
+            width:25%;
+            border:2px solid blue;
+            float: left;
+            /* or  */
+            /* display: inline-block; */
+            box-sizing: border-box; /* count border inside width */
+            border-radius: 10%;
+            padding:20px;
+        }
+        /* this style applies to whatever come after news 
+        if we don't write below code then height wont applied property to news because it's children has float left */
+        
+        #news::after
+        {
+            clear: both;
+            content: "";
+            display: table;
+        }
+    </style>
+</head>
+<body>
+    <h1>Box Modal Property</h1>
+    <article id="news">
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde amet odio labore maiores nostrum ipsum ratione impedit harum quidem numquam libero, eveniet quod fugiat ut? Fuga minus cupiditate quisquam voluptatem modi assumenda vitae facere ipsa et accusantium consequuntur recusandae, mollitia eius, quae nam rerum suscipit molestiae nostrum reprehenderit. Cum, cumque?</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde amet odio labore maiores nostrum ipsum ratione impedit harum quidem numquam libero, eveniet quod fugiat ut? Fuga minus cupiditate quisquam voluptatem modi assumenda vitae facere ipsa et accusantium consequuntur recusandae, mollitia eius, quae nam rerum suscipit molestiae nostrum reprehenderit. Cum, cumque?</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde amet odio labore maiores nostrum ipsum ratione impedit harum quidem numquam libero, eveniet quod fugiat ut? Fuga minus cupiditate quisquam voluptatem modi assumenda vitae facere ipsa et accusantium consequuntur recusandae, mollitia eius, quae nam rerum suscipit molestiae nostrum reprehenderit. Cum, cumque?</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde amet odio labore maiores nostrum ipsum ratione impedit harum quidem numquam libero, eveniet quod fugiat ut? Fuga minus cupiditate quisquam voluptatem modi assumenda vitae facere ipsa et accusantium consequuntur recusandae, mollitia eius, quae nam rerum suscipit molestiae nostrum reprehenderit. Cum, cumque?</div>
+    </article>
+    
+</body>
+</html>
