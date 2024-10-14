@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+
+        }
+
+        #marksheet
+        {
+            display: grid;
+            grid-template-columns: 10% 30% 20% 20% 20%;
+            grid-template-rows: 50px 50px 50px 50px;
+        }
+        div {
+            border: 1px solid black;
+            padding:10px;
+        }
+        
+        /* psudo selector */
+        /* select 1st five div tag */
+        div:nth-child(-n+5)
+        {
+            background-color: gray;
+            color:white;
+            text-transform: uppercase;
+            font-size: x-large;
+            text-align: center;
+        }
+        /* select last 5 div tags */
+        div:nth-last-child(-n+5)
+        {
+            background-color: yellow;
+            color:red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>grid example 1</h1>
+    <article id="marksheet" >
+        <div>sr no</div>
+        <div>Name</div>
+        <div>HTML</div>
+        <div>CSS</div>
+        <div>Javascript</div>
+        <div>1</div>
+        <div>ABC</div>
+        <div>50</div>
+        <div>60</div>
+        <div>70</div>
+        <div>2</div>
+        <div>XYZ</div>
+        <div>60</div>
+        <div>70</div>
+        <div>80</div>
+        <div>3</div>
+        <div>GHI</div>
+        <div>80</div>
+        <div>90</div>
+        <div>100</div>
+        <div>Total</div>
+        <div></div>
+        <div>300</div>
+        <div>350</div>
+        <div>400</div>
+    </article>
+</body>
+
+</html>
