@@ -6,61 +6,144 @@
 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *
-        {
-            margin:0px;
-            padding:0px;
+        * {
+            margin: 0px;
+            padding: 0px;
         }
-        div 
-        {
+
+        div {
             border: 1px solid black;
         }
-        #header
-        {
+
+        #header {
             grid-area: header;
             display: flex;
             justify-content: space-between;
-        } 
-        #menu
-        {
-            grid-area: menu;
+            /* horizontal alignment */
         }
-        #content 
-        {
+
+        #menu {
+            grid-area: menu;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        #navigation>a:link,
+        #navigation>a:visited {
+            background-color: brown;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            font-size: x-large;
+            border-top-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 5px 5px 5px gray;
+        }
+
+        #navigation>a:hover {
+            background-color: black;
+            color: yellow;
+        }
+
+        #navigation>a:active {
+            background-color: red;
+            color: yellow;
+        }
+
+        #menu>a:link,
+        #menu>a:visited {
+            background-image: linear-gradient(185deg,
+                    hsl(348deg 100% 20%) 0%,
+                    hsl(358deg 72% 28%) 8%,
+                    hsl(7deg 71% 32%) 16%,
+                    hsl(14deg 73% 35%) 23%,
+                    hsl(19deg 77% 38%) 31%,
+                    hsl(25deg 81% 41%) 39%,
+                    hsl(30deg 87% 43%) 46%,
+                    hsl(35deg 95% 44%) 54%,
+                    hsl(39deg 100% 45%) 63%,
+                    hsl(43deg 100% 47%) 71%,
+                    hsl(46deg 100% 48%) 80%,
+                    hsl(51deg 100% 49%) 89%,
+                    hsl(55deg 100% 50%) 100%);
+            padding: 10px 10px;
+            color: white;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            width: 50%;
+            font-size: large;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        #menu>a:hover {
+            background-image: linear-gradient(0deg,
+                    hsl(348deg 100% 20%) 0%,
+                    hsl(358deg 72% 28%) 2%,
+                    hsl(7deg 71% 32%) 5%,
+                    hsl(14deg 73% 35%) 8%,
+                    hsl(19deg 77% 38%) 12%,
+                    hsl(25deg 81% 41%) 17%,
+                    hsl(30deg 87% 43%) 24%,
+                    hsl(35deg 95% 44%) 32%,
+                    hsl(39deg 100% 45%) 42%,
+                    hsl(43deg 100% 47%) 54%,
+                    hsl(46deg 100% 48%) 70%,
+                    hsl(51deg 100% 49%) 86%,
+                    hsl(55deg 100% 50%) 100%);
+                    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        }
+
+        #content {
             grid-area: content;
         }
-        #sidebar
-        {
+
+        #sidebar {
             grid-area: sidebar;
         }
-        #footer
-        {
+
+        #footer {
             grid-area: footer;
         }
-        #site 
-        {
+
+        #site {
             background-color: bisque;
             display: grid;
-            grid-template-areas: 
-            "header header header"
-            "menu content sidebar"
-            "footer footer footer";
+            grid-template-areas:
+                "header header header"
+                "menu content sidebar"
+                "footer footer footer";
             grid-template-columns: 20% 60% 20%;
             grid-template-rows: auto 80vh 10vh;
         }
-        #logo
-        {
+
+        #logo {
             display: flex;
             align-items: center;
             gap: 20px;
         }
+
+        /* select all anchor tag inside navigation */
+        #navigation {
+            /* margin-right: 30px; 
+            or
+            */
+            display: flex;
+            flex-direction: row;
+            gap: 50px;
+            align-items: center;
+            /* vertical alignment */
+        }
     </style>
 </head>
+
 <body>
     <section id="site">
         <div id="header">
@@ -68,7 +151,7 @@
                 <img src="http://picsum.photos/100" alt="">
                 <h1>The easylearn academy</h1>
             </div>
-            <div>
+            <div id="navigation">
                 <a href="1_type_universal_selector.html">Home</a>
                 <a href="1_type_universal_selector.html">About us</a>
                 <a href="1_type_universal_selector.html">Product</a>
@@ -76,10 +159,23 @@
                 <a href="1_type_universal_selector.html">Contact us</a>
             </div>
         </div>
-        <div id="menu"><h1>menu</h1></div>
-        <div id="content"><h1>content</h1></div>
-        <div id="sidebar"><h1>sidebar</h1></div>
-        <div id="footer"><h1>footer</h1></div>
+        <div id="menu">
+            <a href="1_type_universal_selector.html">Home</a>
+            <a href="1_type_universal_selector.html">About us</a>
+            <a href="1_type_universal_selector.html">Product</a>
+            <a href="1_type_universal_selector.html">Service</a>
+            <a href="1_type_universal_selector.html">Contact us</a>
+        </div>
+        <div id="content">
+            <h1>content</h1>
+        </div>
+        <div id="sidebar">
+            <h1>sidebar</h1>
+        </div>
+        <div id="footer">
+            <h1>footer</h1>
+        </div>
     </section>
 </body>
+
 </html>
