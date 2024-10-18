@@ -1,0 +1,71 @@
+/* universal selector */
+*
+{
+    margin:0px;
+    padding:0px;
+    letter-spacing: 1px;
+    font-size: 20px;
+}
+/* type selector */
+body 
+{
+    background-color: blanchedalmond;
+}
+h1 
+{
+    font-size: 2rem;
+}
+h2 
+{
+    font-size: 1.6rem;
+}
+h3 
+{
+    font-size: 1.4rem;
+}
+h4 
+{
+    font-size: 1.2rem;
+}
+/* class style */
+.box 
+{
+    height:150px;
+    width:150px;
+}
+.border 
+{
+    border: 1px solid brown;
+}
+.double-border 
+{
+    border: 5px double brown;
+}
+.sports 
+{
+    display: flex;
+    justify-content: space-around; /* horizontal alignment */
+}
+.rounded-box 
+{
+    border-radius:20px;
+}
+
+.circle
+{
+    border-radius: 100%;
+}
+.hidden
+{
+    overflow: hidden;
+}
+/* below style applies only to image which is inside clipped */
+.clipped>img
+{
+    height: 100%;
+    width: 100%;
+}
+.shadow
+{
+    box-shadow: 5px 5px 5px black;
+}
