@@ -1,0 +1,96 @@
+* 
+{
+    margin: 0px;
+    padding: 0px;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+}
+
+div 
+{
+    border: 1px solid black;
+}
+#site 
+{
+    display: grid;
+    height: 100vh;
+}
+#header 
+{
+    grid-area: header;
+    display: flex;
+    align-items: center;
+}
+#header>img 
+{
+    height: 100%;
+}
+#left
+{
+    grid-area: left;
+}
+#right
+{
+    grid-area: right;
+}
+#main
+{
+    grid-area: main;
+}
+#footer
+{
+    grid-area: footer;
+}
+
+/* media query */
+/*  ##Device = Most of the Smartphones Mobiles (Portrait) ##Screen = B/w 320px to 479px */
+@media (min-width: 320px) and (max-width: 480px) {
+    /* code in this block will be applied only if device width>320 and <480 */
+    #site 
+    {
+        grid-template-areas: 
+        "header"
+        "main"
+        "left"
+        "right"
+        "footer";
+        grid-template-columns: 100%;
+        grid-template-rows: 10% 50% 15% 15% 10%;
+    }
+    #header>ul 
+    {
+        display: none;
+        /* visibility: hidden; */
+    }
+}
+
+/* ##Device = Low Resolution Tablets,  ##Screen = B/w 481px to 767px */
+@media (min-width: 481px) and (max-width: 1024px) {
+    /* code in this block will be applied only if device width>481 and <767 */
+    #site 
+    {
+        grid-template-areas: 
+        "header header"
+        "main main"
+        "left right"
+        "footer footer";
+        grid-template-columns: 50%;
+        grid-template-rows: 10% 50% 30% 10%;
+    }
+}
+
+
+
+/* ##Device = Laptops, Desktops ##Screen = B/w 1025px to 1280px*/
+@media (min-width: 1025px){
+    /* code in this block will be applied only if device width>1025 and <1280 */
+    #site 
+    {
+        grid-template-areas: 
+        "header header header"
+        "left main right"
+        "footer footer footer";
+        grid-template-columns: 15% 70% 15%;
+        grid-template-rows: 10% 80% 10%;
+    }
+}
