@@ -47,3 +47,4 @@ Create a responsive blog layout that adjusts for different screen sizes:
     Display 2 blog posts per row on tablet devices.
     Display 3 blog posts per row on medium screens.
     Display 4 blog posts per row on large and extra-large screens.
+
