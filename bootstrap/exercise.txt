@@ -48,3 +48,5 @@ Create a responsive blog layout that adjusts for different screen sizes:
     Display 3 blog posts per row on medium screens.
     Display 4 blog posts per row on large and extra-large screens.
 
+6) create below resume responsive
+    https://d.novoresume.com/images/doc/skill-based-resume-template.png
