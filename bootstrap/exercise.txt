@@ -50,3 +50,12 @@ Create a responsive blog layout that adjusts for different screen sizes:
 
 6) create below resume responsive
     https://d.novoresume.com/images/doc/skill-based-resume-template.png
+
+7) Create inline form to book hotel. use link blow for reference 
+https://www.makemytrip.com/hotels/
+
+8) create grid form to register yourself to find life partner. use link blow for reference https://www.shaadi.com
+
+9) create horizontal form to register yourself on twitter. e link blow for reference https://x.com/i/flow/signup
+
+10) create vertical form to login yourself on twitter. e link blow for reference https://x.com/i/flow/login
