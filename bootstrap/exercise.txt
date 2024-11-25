@@ -59,3 +59,6 @@ https://www.makemytrip.com/hotels/
 9) create horizontal form to register yourself on twitter. e link blow for reference https://x.com/i/flow/signup
 
 10) create vertical form to login yourself on twitter. e link blow for reference https://x.com/i/flow/login
+
+11) add Register button with modal in example 23.
+
