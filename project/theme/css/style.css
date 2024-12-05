@@ -15020,9 +15020,16 @@ section.promo-sec .breadcrumb .breadcrumb-item.active {
 
 .feature-entry {
     padding: 40px 30px;
-    border-top: 2px solid transparent
+    border-top: 2px solid transparent;
+    height: 500px;
+    overflow: scroll;
+    margin-bottom: 20px;
 }
-
+.why-join-us
+{
+    height: 400px;
+    overflow: scroll;
+}
 .feature-entry,
 .feature-entry:before {
     -webkit-transition: all .4s ease-in-out;
