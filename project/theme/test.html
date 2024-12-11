@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Define customer details
+        const customerName = "John Doe";
+        const mobile = "9662512857"; // Mobile number including country code
+        const selectedPackage = "Gold Package";
+
+        // Construct the WhatsApp message
+        const message = `Hello ${customerName},\nThank you for choosing our service.\nYour selected package is: ${selectedPackage}.\nFeel free to contact us if you have any questions.`;
+
+        // Encode the message to make it URL-safe
+        const encodedMessage = encodeURIComponent(message);
+
+        // Construct the WhatsApp URL
+        const whatsappURL = `https://wa.me/${mobile}?text=${encodedMessage}`;
+
+        // Open WhatsApp chat in a new tab or window
+        window.open(whatsappURL, '_blank');
+
+        
+    </script>
+</body>
+
+</html>
