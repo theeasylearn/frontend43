@@ -128,7 +128,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h3>Person detail</h3>
-                            <form>
+                            <form action="payment.html" method="post" onsubmit="return doPayment();">
                                 <!-- Name Input -->
                                 <div class="mb-3">
                                     <label for="name" class="form-label">Name</label>
@@ -144,9 +144,9 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="Transactionid" class="form-label">UPI Transaction ID</label>
-                                    <input type="tel" class="form-control" id="Transactionid"
-                                        placeholder="it should appear to you once you did payment" required>
+                                    <label for="upitransactionid" class="form-label">UPI Transaction ID</label>
+                                    <input type="tel" class="form-control" id="upitransactionid"
+                                        placeholder="it should appear to you once you did payment" required />
                                 </div>
 
                                 <!-- Submit Button -->
@@ -247,6 +247,27 @@
     <script src="js/custom.js"></script>
     <script src="https://kit.fontawesome.com/20994dd270.js" crossorigin="anonymous"></script>
 
+    <script>
+        function doPayment() {
+            //alert('form submitted');
+            //access input
+            var name = document.getElementById('name').value;
+            var mobile = document.getElementById('mobile').value;
+            var upitransactionid = document.getElementById('upitransactionid').value;
+            const message = `Hello ${name}, has purchased coaching plan .\n Contact no is ${mobile} his payment id is ${upitransactionid}`;
+
+            // Encode the message to make it URL-safe
+            const encodedMessage = encodeURIComponent(message);
+
+            // Construct the WhatsApp URL
+            const whatsappURL = `https://wa.me/9662512857?text=${encodedMessage}`;
+
+            // Open WhatsApp chat in a new tab or window
+            window.open(whatsappURL, '_blank');
+            //alert('thanks for payment. we will contact you in 24 hours.');
+            return false;
+        }
+    </script>
 </body>
 
 </html>
