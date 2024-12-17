@@ -1,0 +1,1 @@
+1) display your resume using document.write method.
