@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>working with inputs using javascript</h1>
+    <hr/>
+    <script>
+        "use strict";
+        //declare variables
+        var num1 = 0;
+        var num2 = 0;
+        //accept input from 
+        num1 = prompt("Enter first number",'1');
+        num2 = prompt("Enter second number",'1');
+
+        var choice = prompt("1 = addition, 2 = subtraction, 3 = multiplication, 4 = division");
+        //convert string into numbers
+        num1 = parseFloat(num1);
+        num2 = parseFloat(num2);
+
+        choice = parseInt(choice);
+        var result = null;
+        if(choice == 1)
+        {
+            result = num1 + num2;
+        }
+        else if(choice == 2)
+        {
+            result = num1 - num2;
+        }
+        else if(choice == 3)
+        {
+            result = num1 * num2;
+        }
+        else if(choice == 4)
+        {
+            result = num1 / num2;
+            result = result.toFixed(2);
+        }
+
+        if(result != null)
+            document.write("result = " + result);
+        else 
+            document.write("invalid choice, refresh web page");
+    </script>
+</body>
+</html>
