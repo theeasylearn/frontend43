@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>example of confirm dialogbox</h1>
+    <hr />
+    <script>
+        //create variable
+        var response = null;
+        var amount = 0;
+        amount = prompt("how many rupees you want to donate?", 1000);
+        response = confirm(`are you want to donate ${amount} Rs?`);
+        if (response == false) {
+            alert('you should give donation');
+        }
+        else 
+        {
+            window.location="https://www.impactguru.com/";
+            //this will display google.com in current tab.
+        }
+    </script>
+</body>
+
+</html>
