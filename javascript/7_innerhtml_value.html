@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .anthem 
+        {
+            color:blue;
+            font-size: large;
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Working with tags</h1>
+    <hr />
+    <table border="1" cellpadding="10">
+        <tr>
+            <td id="td1"></td>
+            <td id="td2"></td>
+            <td id="td3"></td>
+            <td id="td4">
+                <input type="text" id="fullname" value="the easylearn academy" />
+                <p id="detail">empty</p>
+            </td>
+        </tr>
+    </table>
+    <script>
+        //create variable 
+        var hindiAnthem = `<h3>जन गण मन (भारत का राष्ट्रीय गान)</h3>जन गण मन अधिनायक जय हे, <br/>
+भारत भाग्य विधाता। <br/>
+पंजाब, सिंध, गुजरात, मराठा, <br/>
+द्राविड़, उत्कल, बंग। <br/>
+विंध्य, हिमाचल, यमुना, गंगा, <br/>
+उच्छल जलधि तरंग। <br/>
+तव शुभ नामे जागे, <br/>
+तव शुभ आशीष मांगे। <br/>
+गाहे तव जय गाथा। <br/>
+जन गण मंगलदायक जय हे, <br/>
+भारत भाग्य विधाता। <br/>
+जय हे, जय हे, जय हे, <br/>
+जय जय जय जय हे।`;
+
+        //change text of html tag whose id is td1    
+        document.getElementById('td1').innerHTML = hindiAnthem;
+
+        var gujaratiAnthem = `<h2>જન ગણ મન (ભારતનું રાષ્ટ્રગીત)</h2>
+
+જન ગણ મન અધિક નાયક જય હે, <br/>
+ભારત ભાગ્ય વિધાતા. <br/>
+પંજાબ, સિંઘ, ગુજારાત, મરાઠા, <br/>
+દ્રવિડ, ઉત્કલ, બંગ. <br/>
+વિંદ્ય, હિમાચલ, યમુના, ગંગા, <br/>
+ઉચ્છલ જલધિ તરંગ. <br/>
+તવ શુભ નામે જાગે, <br/>
+તવ શુભ આશિષ માગે, <br/>
+ગાહે તવ જયગાથા. <br/>
+જન ગણ મંગલદાયક જય હે, <br/>
+ભારત ભાગ્ય વિધાતા. <br/>
+જય હે, જય હે, જય હે, <br/>
+જય જય જય જય હે.`;
+
+        document.getElementById('td2').innerHTML = gujaratiAnthem;
+
+        var temp1 = document.getElementById('td1').innerHTML;
+        var temp2 = document.getElementById('td2').innerHTML;
+
+        document.getElementById('td3').innerHTML = temp1 + temp2;
+
+        var fullname = document.getElementById('fullname').value;
+        document.getElementById('detail').innerHTML = fullname;
+
+        document.getElementById('fullname').value = "Ankit Patel";
+        document.getElementById('td1').className = 'anthem';
+        document.getElementById('td2').className = 'anthem';
+        document.getElementById('td3').className = document.getElementById('td1').className;
+        document.getElementById('td4').style = "color:red;font-size:2rem";
+        document.getElementById('fullname').style = "color:red;font-size:2rem";
+    </script>
+</body>
+
+</html>
