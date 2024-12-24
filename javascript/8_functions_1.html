@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>working with functions in javascript</h1>
+    <script>
+        //define function
+        //without return value without argument function
+        function printDate()
+        {
+            let today = new Date(); //create object of date class
+            let output = today.getDate() + "-" + today.getMonth() + "-" + today.getFullYear();
+            document.write(output);
+
+        }
+        //with return value without argument
+        function getCurrentTime()
+        {
+            //local variable
+            let current = new Date();
+            let output = current.getHours()  + ":" + current.getMinutes();
+            return output;
+        }
+
+        //without return value with argument
+        function changePage(website)
+        {
+            window.location = website;
+        }
+        //with argument with return value 
+        function toMeter(km)
+        {
+            let meter = km * 1000;
+            return meter; 
+        }
+        //calling
+        printDate();
+
+        let currentTime = getCurrentTime();
+        document.write("<p>" + currentTime + "</p>");
+        var km = parseInt(prompt("enter km"));
+        var meter = toMeter(km);
+        alert(meter);
+        var website = prompt("which website you want surf");
+        changePage(website);
+    </script>
+</body>
+</html>
