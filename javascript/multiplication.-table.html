@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Multiplication Table</h1>
+    <div id="table"></div>
+    <script>
+        var output = `<table border="1" cellspacing="0" cellpadding="5">`;
+
+        //create function using 2nd way
+        let GenerateTable = function () {
+            var count = 1;
+            var row = '';
+            var num = parseInt(prompt('enter number'));
+            while (count <= 10) {
+                row += `<tr>
+                    <td>${num}</td>
+                    <td>x</td>
+                    <td>${count}</td>
+                    <td>=</td>
+                    <td>${count * num}</td>
+                    </tr>`;
+                count = count + 1;
+            }
+            output = output + row + `</table>`;
+            document.getElementById('table').innerHTML = output;
+
+        }
+        GenerateTable();
+    </script>
+
+</body>
+
+</html>
