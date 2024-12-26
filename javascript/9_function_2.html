@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Arrow function in javascript</h1>
+    <ul>
+        <li><b>addition</b> <span id="span1"></span></li>
+        <li><b>subtraction</b> <span id="span2"></span></li>
+        <li><b>minimum</b> <span id="span3"></span></li>
+        <li><b>maximum</b> <span id="span4"></span></li>
+        <li><b></b> <span id="span5"></span></li>
+        <li><b></b> <span id="span6"></span></li>
+        <li><b></b> <span id="span7"></span></li>
+        
+    </ul>
+    <script>
+        //arrow functions
+
+        //single line arrow function
+        let add = (num1,num2) => num1 + num2;
+        let sub = (num1,num2) => num1 - num2;
+        let min = (num1,num2) => (num1<num2) ? num1 : num2;
+        //multiline arrow function
+        let max = (num1,num2) => {
+            if(num1>num2)
+                return num1;
+            else 
+                return num2;
+        }
+        let html = (tagId,value=null) => {
+            if(value!=null)
+                document.getElementById(tagId).innerHTML = value;
+            else 
+                return document.getElementById(tagId).innerHTML;
+        }
+        //default argument function
+        let getSimpleInterest = (amount,rate=10,year=1) => (amount * rate * year) / 100;
+        let num1 = parseInt(prompt("Enter num1"));
+        let num2 = parseInt(prompt("Enter num2"));
+        document.getElementById('span1').innerHTML = add(num1,num2);
+        document.getElementById('span2').innerHTML = sub(num1,num2);
+        html('span3',min(num1,num2));
+        html('span4',max(num1,num2));
+        document.write(html('span3'));
+        //calling function
+    </script>
+</body>
+</html>
