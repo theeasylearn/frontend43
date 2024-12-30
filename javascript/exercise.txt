@@ -1,1 +1,3 @@
 1) display your resume using document.write method.
+2) create web page for simple interest calculator using bootstrap. calculate and display interest when user click on button. 
+3) create web page for income taxt calculator using bootstrap for new text regime. calculate and display interest when user click on button. 
