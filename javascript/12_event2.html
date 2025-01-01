@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td  
+        {
+            height: 48px; 
+            width: 48px; 
+        }
+    </style>
+</head>
+<body>
+    <h1>2nd way of event handling</h1>
+    <h2>Tic Tac</h2>
+    <hr/>
+    <table border="1"  cellpadding="10" align="center" >
+        <tr>
+            <td>
+               
+            </td>
+            <td>
+               
+            </td>
+            <td>
+               
+            </td>
+        </tr>
+        <tr>
+            <td>
+               
+            </td>
+            <td>
+               
+            </td>
+            <td>
+               
+            </td>
+        </tr>
+        <tr>
+            <td>
+               
+            </td>
+            <td>
+               
+            </td>
+            <td>
+               
+            </td>
+        </tr>
+    </table>
+    <script>
+        //create variable to store reference ot 1st td
+        var cells = document.getElementsByTagName('td'); //return reference of all td tag as list/array/collection
+        // console.log(cells);
+        // [...cells].forEach((td) => {
+        //     console.log(td.innerHTML); 
+        // });
+        var sign = `<img src='images/zero.png' />`;
+        for(let index=0;index<cells.length;index++)
+        {
+            console.log(cells[index].innerHTML); 
+            cells[index].onclick = function() {
+                //alert('clicked...');
+                this.innerHTML = sign;
+                if (sign === `<img src='images/zero.png' />`)
+                    sign = `<img src='images/false.png' />`;
+                else 
+                    sign = `<img src='images/zero.png' />`;
+                this.onclick = null;
+            }
+        }
+    </script>
+</body>
+</html>
