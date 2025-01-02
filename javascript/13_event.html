@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error 
+        {
+            background-color: antiquewhite;
+            color:red;
+            border: 1px solid red;
+            padding:5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>3rd way of event handling</h1>
+    <h2>Donation form with input validation</h2>
+    <hr />
+    <form action="" method="post">
+        <table border="1" cellpadding="5" cellspacing="0" width="50%" align="center">
+            <tr>
+                <td>First Name</td>
+                <td width="20%"><input type="text" id="first_name" name="first_name"></td>
+                <td width="60%"><span id="error_first_name"></span></td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td><input type="text" id="last_name" name="last_name"></td>
+                <td><span id="error_last_name"></span></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="text" id="email" name="email"></td>
+                <td><span id="error_email"></span></td>
+            </tr>
+            <tr>
+                <td>Amount</td>
+                <td>
+                    <input type="text" id="amount" name="amount" />
+                    <p id="words"></p>
+                </td>
+                <td><span id="error_amount"></span></td>
+            </tr>
+            <tr>
+                <td colspan="3"><input type="submit" value="Donate"></td>
+            </tr>
+        </table>
+        <script>
+            //create list which has reference of all inputs
+            var textboxes = document.querySelectorAll('input:not([type="submit"])');
+            console.log(textboxes);
+
+            [...textboxes].forEach(function (item) {
+                console.log(item);
+                item.addEventListener('blur', function () {
+                    let tagId = "error_" + this.id;
+                    if (this.value === '') {
+                        let error = this.id.split("_").join(" ") + " can not be blank";
+                        document.getElementById(tagId).innerHTML = error;
+                        document.getElementById(tagId).className = 'error';
+                    }
+                    else 
+                    {
+                        document.getElementById(tagId).innerHTML = "";
+                        document.getElementById(tagId).className = "";
+                    }
+                });
+            });
+
+            document.getElementById('amount').addEventListener('input',function(){
+                console.log(this.value);
+                
+            });
+
+        </script>
+</body>
+
+</html>

@@ -1,3 +1,11 @@
 1) display your resume using document.write method.
 2) create web page for simple interest calculator using bootstrap. calculate and display interest when user click on button. 
 3) create web page for income taxt calculator using bootstrap for new text regime. calculate and display interest when user click on button. 
+
+4) complete tic tac in two player mode
+5) complete tic tac in one player vs computer 
+
+6) convert amount into words in 13_event.html (upto 100 crore)
+input : 12345 
+output : ten thousand three hundred forty five.
+special instruction : without decision making statement.
