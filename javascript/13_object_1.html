@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Create object using 1st technique</h1>
+    <hr/>
+    <table border="1" align="center" cellpadding="10" width="50%">
+        <tbody id="content">
+     
+        </tbody>
+    </table>
+    <script>
+        var book = {
+            //variables defined inside object is called properties or state
+            name: 'The atomic habit',
+            author: 'james Clear',
+            price: 400,
+            description: '*Atomic Habits* by James Clear is a transformative guide to building good habits, breaking bad ones, and mastering the small actions that lead to remarkable results. Grounded in behavioral science, the book emphasizes the power of incremental changes and how tiny habits can compound into significant improvements over time. Clear introduces actionable strategies like the 1% rule, habit stacking, and the four-step habit loop: cue, craving, response, and reward. He also provides practical tools to design systems for success and overcome obstacles. Inspirational and practical, *Atomic Habits* empowers readers to reshape their lives by focusing on the power of small, consistent actions.',
+            photo:'https://upload.wikimedia.org/wikipedia/commons/0/06/Atomic_habits.jpg?20220408104922',
+            display : function()
+            {
+                var temp = `       <tr>
+                <td width="25%">Name</td>
+                <td>${this.name}</td>
+            </tr>
+            <tr>
+                <td width="25%">Author</td>
+                <td>${this.author}</td>
+            </tr>
+            <tr>
+                <td width="25%">price</td>
+                <td>${this.price}</td>
+            </tr>
+            <tr>
+                <td width="25%">photo</td>
+                <td>
+                    <img src='${this.photo}' />
+                    </td>
+            </tr>
+            <tr>
+                <td width="25%">description</td>
+                <td>${this.description}</td>
+            </tr>`;
+            document.getElementById('content').innerHTML = temp;
+            }
+        }
+        //display console
+        console.log(book);
+        //let us call method of object
+        book.display();
+    </script>
+</body>
+</html>
