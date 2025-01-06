@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        working with object 
+    </h1>
+    <hr>
+
+    <table border="1" cellpadding="10" align="center">
+        <thead>
+            <tr>
+                <th>sr no</th>
+                <th>name</th>
+                <th>price</th>
+                <th>weight</th>
+            </tr>
+        </thead>
+        <tbody id="shop">
+            <!-- <tr>
+                <td>1</td>
+                <td>product 1</td>
+                <td>2000</td>
+                <td>23.5</td>
+            </tr> -->
+        </tbody>
+    </table>
+
+    <script>
+        let count=0;
+
+        var product = new Object({
+            name : "", 
+            price : 0,
+            weight : 0.0,
+
+            display:function(){
+                count++;
+                let content = `<tr><td>${count}</td><td>${this.name}</td><td>${this.price}</td><td>${this.weight}</td></tr>`;
+                document.getElementById('shop').innerHTML+=content;
+            }
+        })
+
+        var p1 = product
+        p1.name="product 1";
+        p1.price = 1000;
+        p1.weight=40.5;
+        p1.display();
+
+        var p2 = product
+        p2.name = "product 2";
+        p2.price = 3000;
+        p2.weight = 50.4;
+        p2.display();
+
+    </script>
+</body>
+</html>
