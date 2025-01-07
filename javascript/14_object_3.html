@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>3rd way to create object</h1>
+    <script>
+        //1st create template to create object using function
+        function Product(name,price,quantity,size)
+        {
+            //create property variable using arguments
+            this.name = name,
+            this.price = price,
+            this.quantity = quantity,
+            this.size = size,
+            this.display = function()
+            {
+                console.log('display function');
+                console.log(this.name,this.price,this.quantity,this.size);
+            }
+        }
+        //create object using template
+        var p1 = new Product('IPhone 16 pro max',125000,2,'large');
+        console.log(p1.name,p1.price,p1.quantity,p1.size);
+        p1.display();
+        
+    </script>
+</body>
+</html>
