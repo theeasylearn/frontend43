@@ -112,7 +112,7 @@
                                     <td>${this.quantity}</td>
                                     <td>${this.total}</td>
                                     <td>
-                                        <button type="button" class="btn btn-danger">Delete</button>
+                                        <button type="button" class="btn btn-danger" onclick="deleteItem(this)">Delete</button>
                                     </td>
                                 </tr>`;
                 }
@@ -134,7 +134,13 @@
             size.value = "";
             return false;
         }
-
+        function deleteItem(button)
+        {
+            // alert(button.innerHTML);
+            // alert(button.parentElement.parentElement.parentElement.innerHTML);
+            button.parentElement.parentElement.parentElement.removeChild(button.parentElement.parentElement);
+            alert('deleted...');
+        }
     </script>
 </body>
 
