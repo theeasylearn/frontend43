@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>4th way to create object</h1>
+    <hr/>
+    <script>
+        //create class (es6 way to create object)
+        class Route 
+        {
+            constructor(source,destination,price,type,time)
+            {
+                console.log('constructor called');
+                //used to create property variables 
+                this.source = source;
+                this.destination = destination;
+                this.price = price,
+                this.type = type;
+                this.time = time;
+            }
+            display()
+            {
+                console.log(this); //this means current object
+            }
+        }
+        //create object variable using class
+        //syntax
+        //var object-variable = new class();
+        var r1 = new Route('Bhavnagar','Ahmedabad',200,'ac','06:00 am');
+        r1.display();
+        var source = prompt("enter source");
+        var destination = prompt('enter destination');
+        var price = parseInt(prompt('enter price'));
+        var type = prompt("Enter type (ac/express)");
+        var time = prompt("Enter departure time");
+        var v2 = new Route(source,destination,price,type,time);
+        v2.display();
+    </script>
+</body>
+</html>
