@@ -4,10 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-    <h1>4th way to create object</h1>
-    <hr/>
+    <div class="container-fluid bg-light p-3 shadow mb-3">
+        <div class="row">
+            <div class="col-12">
+                <form class="row gx-3 gy-2 align-items-center" novalidate>
+                    <!-- Source -->
+                    <div class="col-auto">
+                        <label for="source" class="form-label visually-hidden">Source</label>
+                        <input type="text" class="form-control" id="source" placeholder="Source" required>
+                    </div>
+        
+                    <!-- Destination -->
+                    <div class="col-auto">
+                        <label for="destination" class="form-label visually-hidden">Destination</label>
+                        <input type="text" class="form-control" id="destination" placeholder="Destination" required>
+                    </div>
+        
+                    <!-- Price -->
+                    <div class="col-auto">
+                        <label for="price" class="form-label visually-hidden">Price</label>
+                        <input type="number" class="form-control" id="price" placeholder="Price" required>
+                    </div>
+        
+                    <!-- Type (AC/Express) -->
+                    <div class="col-auto">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="type" id="ac" value="AC" required>
+                            <label class="form-check-label" for="ac">AC</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="type" id="express" value="Express" required>
+                            <label class="form-check-label" for="express">Express</label>
+                        </div>
+                    </div>
+        
+                    <!-- Time -->
+                    <div class="col-auto">
+                        <label for="time" class="form-label visually-hidden">Time</label>
+                        <input type="time" class="form-control" id="time" required>
+                    </div>
+        
+                    <!-- Submit Button -->
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-primary">Add</button>
+                        <button type="reset" class="btn btn-dark">clear</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Routes</h3>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Sr.</th>
+                                    <th>Source</th>
+                                    <th>Destination</th>
+                                    <th>Price</th>
+                                    <th>Type</th>
+                                    <th>Departure</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script>
         //create class (es6 way to create object)
         class Route 
@@ -32,13 +116,13 @@
         //var object-variable = new class();
         var r1 = new Route('Bhavnagar','Ahmedabad',200,'ac','06:00 am');
         r1.display();
-        var source = prompt("enter source");
-        var destination = prompt('enter destination');
-        var price = parseInt(prompt('enter price'));
-        var type = prompt("Enter type (ac/express)");
-        var time = prompt("Enter departure time");
-        var v2 = new Route(source,destination,price,type,time);
-        v2.display();
+        // var source = prompt("enter source");
+        // var destination = prompt('enter destination');
+        // var price = parseInt(prompt('enter price'));
+        // var type = prompt("Enter type (ac/express)");
+        // var time = prompt("Enter departure time");
+        // var v2 = new Route(source,destination,price,type,time);
+        // v2.display();
     </script>
 </body>
 </html>

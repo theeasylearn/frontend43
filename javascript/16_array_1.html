@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>working with array</h1>
+    <hr/>   
+
+    <script>
+        // var name = "Rajan";
+        // console.log(name);
+        // name = "harshil"; //reassign value
+        // console.log(name); //because variable can store only one value at a time.
+        //create an araay   
+        var names = ['Rajan','Harshil','Raj','Rajesh'];
+        console.log(names[0]); //Rajan
+        console.log(names[1]); //Harshil
+        console.log(names[2]); //Raj
+        console.log(names[3]); //Rajesh
+        console.log(names); //['Rajan','Harshil','Raj','Rajesh']
+        //change value of array
+        names[0] = 'Rajan Joshi';
+        names[3] = "Rajesh Kumar";
+        console.log(names[0]); //Rajan Joshi
+        console.log(names[3]); //Rajesh Kumar
+        //add new value at the end of array
+        names.push('Ganesh'); //['Rajan Joshi','Harshil','Raj','Rajesh Kumar','Ganesh']
+        names.push('Mohan'); //['Rajan Joshi','Harshil','Raj','Rajesh Kumar','Ganesh','Mohan']
+        console.log(names);
+        //add new value at the start (begining) of array
+        names.unshift('Ramesh'); //['Ramesh','Rajan Joshi','Harshil','Raj','Rajesh Kumar','Ganesh','Mohan']
+        names.unshift('Suresh'); //['Suresh','Ramesh','Rajan Joshi','Harshil','Raj','Rajesh Kumar','Ganesh','Mohan']
+        console.log(names);
+        //remove value from end of array
+        var temp = names.pop(); //['Suresh','Ramesh','Rajan Joshi','Harshil','Raj','Rajesh Kumar','Ganesh']
+        console.log(temp); //Mohan
+        console.log(names);
+        //remove value from start of array
+        temp = names.shift(); //['Ramesh','Rajan Joshi','Harshil','Raj','Rajesh Kumar','Ganesh']
+        console.log(temp); //Suresh 
+        console.log(names);
+        //remove value at 3rd position
+        names.splice(3,1); //['Ramesh','Rajan Joshi','Harshil','Rajesh Kumar','Ganesh']
+        console.log(names);
+        names.splice(1,2); //['Ramesh','Rajesh Kumar','Ganesh']
+        console.log(names);
+        //remove Rajesh kumar by value  
+        var index = names.indexOf('Rajesh khanna');
+        console.log(index); //1
+        names.splice(index,1); //['Ramesh','Ganesh']
+        console.log(names);
+        //create an array of 10 vegitables not in any order 
+        var vegitables = ['tomato','potato','onion','cabbage','cauliflower','brinjal','ladyfinger','carrot','beetroot','radish'];
+        console.log(vegitables);
+        //sort array in ascending order
+        vegitables.sort();
+        console.log(vegitables);
+        //sort array in descending order
+        vegitables.reverse();
+        console.log(vegitables);
+        //array value merge with comma
+        var str = vegitables.join(',');
+        console.log(str);
+        //get size of array
+        console.log(vegitables.length); //10
+        for(var i=0;i<vegitables.length;i++)
+        {
+            document.write(vegitables[i] +   "<br/>");
+        }
+        
+    </script></body>
+</html>
