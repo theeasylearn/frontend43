@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>single level inheritance</h1>
+    <script>
+        //create parent class
+        class Person
+        {
+            //create constructor
+            constructor(name,gender)
+            {
+                this.name = name;
+                this.gender = gender;
+                console.log("person class constructor called...");
+            }
+            //other methods
+            walk()
+            {
+                console.log(`${this.name} can walk`);
+            }
+            talk()
+            {
+                console.log(`${this.name} can talk`);
+            }
+        }
+        //child class 
+        class Student extends Person
+        {
+            constructor(name,gender,subject)
+            {
+                //call parent class constructor
+                super(name,gender);
+                this.subject = subject;
+                console.log("Student class constructor called...");
+
+            }
+            read()
+            {
+                console.log(`${this.name} can read ${this.subject}`);
+            }
+            write()
+            {
+                console.log(`${this.name} can write ${this.subject}`);
+            }
+            //create function which call other functions
+            whatICanDo()
+            {
+                //call parent class function
+                super.walk();
+                super.talk();
+                //call own function
+                this.read();
+                this.write();
+            }
+        }
+        //create Student class object
+        //var object-name = new ClassName();
+        var s1 = new Student('Diya',false,'Gujarati');
+        var s2 = new Student('Dipesh',true,'Hindi');
+
+        //object-name.method
+        s1.walk();
+        s1.talk();
+        s1.read();
+        s1.write();
+
+        s2.whatICanDo();
+    </script>
+</body>
+</html>
