@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        working with inheritance
+    </h1>
+
+    <script>
+        class Student{
+            constructor(){
+                console.log("cunstructor called...");
+            }
+            read(){
+                console.log("i can read....");
+            }
+
+            write(){
+                console.log("i can write...");
+            }
+        }
+
+        class person extends Student
+        {
+            constructor()
+            {
+                super()
+                console.log("child cunstroctor called...");
+            }
+
+            speak(){
+                console.log("i can speak...");
+            }
+        }
+
+        var s1 = new Student();
+        s1.read();
+        s1.write();
+        // s1.speak(); error
+
+        var p1 = new person();
+        p1.speak();
+        p1.read();
+        p1.write();
+    </script>
+</body>
+</html>
