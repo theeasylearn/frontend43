@@ -9,3 +9,17 @@
 input : 12345 
 output : ten thousand three hundred forty five.
 special instruction : without decision making statement.
+
+7) create class KB 
+        has property variable bytes 
+        has function getKB which return kilobyte of given bytes 
+
+    create class MB should inherit KB 
+         has function getMB which return megabytes of given bytes
+
+    create class GB should inherit MB 
+         has function getGB which return gigabytes of given bytes
+
+    create class TB should inherit GB 
+         has function getGB which return terabytes of given bytes
+

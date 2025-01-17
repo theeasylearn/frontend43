@@ -7,10 +7,11 @@
 </head>
 <body>
     
-    <h1>working with multilevel inheritance</h1>
+    <h1>working with multi-level inheritance</h1>
     <hr>
 
     <script>
+        //base/root
         class person{
             constructor(name){
                 this.name = name ; 
@@ -23,6 +24,7 @@
             }
         }
 
+        //derived class
         class Student extends person{
             constructor(name,roll){
                 super(name);
@@ -35,8 +37,8 @@
                 console.log(`${this.name} - ${this.roll} can write...`);
             }
         }
-
-        class division extends Student{
+        //inherit derived class Student
+        class Division extends Student{
             constructor(name,roll,div){
                 super(name,roll);
                 this.div = div ; 
@@ -59,7 +61,7 @@
         s1.walk();
         
         console.log("-----------------------------");
-        var d1 = new division('balar' ,101,"A");
+        var d1 = new Division('balar' ,101,"A");
         d1.read();
         d1.write();
         d1.speak();

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>working with multi-level inheritance</h1>
+    <hr>
+
+    <script>
+        const PI  = 3.141516; //READ ONLY VARIABLE
+        class Shape 
+        {
+            //create constant variable
+            getPi()
+            {
+                // return 3.14; do not use literals, use variable/constant
+                return PI;
+            }
+            getSquare(num)
+            {
+                let area = num * num;
+                return area;
+            }
+
+        }
+        //create Circle class
+        class Circle extends Shape 
+        {
+            constructor(radius)
+            {
+                super(); //required
+                //constructor is used to create property variable
+                this.radius = radius;
+                console.log('circle class constructor called...');
+            }
+            getArea()
+            {
+                //formula pi*radius*radius
+                let area = super.getPi() * super.getSquare(this.radius);
+                return area;
+            }
+        }
+        class Sphere extends Circle 
+        {
+            constructor(radius)
+            {
+                super(radius);
+                console.log('Sphere area is calculated...');
+            }
+            getSurfaceArea()
+            {
+                let area = 4 * super.getArea();
+                return area;
+            }
+        }
+        var s = new Shape();
+        console.log(s.getPi());
+        console.log(s.getSquare(10));
+
+        var c = new Circle(250);
+        console.log(c.getArea());
+
+        var sp = new Sphere(250);
+        console.log(sp.getSurfaceArea());
+    </script>
+</body>
+</html>
