@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>example of hierarchical inheritance</h1>
+    <script>
+        class Person
+        {
+            //create constructor
+            constructor(name,gender)
+            {
+                this.name = name;
+                this.gender = gender;
+                console.log("person class constructor called...");
+            }
+            //other methods
+            walk()
+            {
+                console.log(`${this.name} can walk`);
+            }
+            talk()
+            {
+                console.log(`${this.name} can talk`);
+            }
+        }
+        class Student extends Person
+        {
+            constructor(name,gender,subject)
+            {
+                //call parent class constructor
+                super(name,gender);
+                this.subject = subject;
+                console.log("Student class constructor called...");
+
+            }
+            read()
+            {
+                console.log(`${this.name} can read ${this.subject}`);
+            }
+            write()
+            {
+                console.log(`${this.name} can write ${this.subject}`);
+            }
+            //create function which call other functions
+            whatICanDo()
+            {
+                //call parent class function
+                super.walk();
+                super.talk();
+                //call own function
+                this.read();
+                this.write();
+            }
+        }
+        //create another class called Artist
+        class Artist extends Person 
+        {
+            constructor(name,gender,art)
+            {
+                super(name,gender);
+                this.art = art;
+                console.log('Artist class construtor called...');
+            }
+            skill()
+            {
+                console.log(`${this.name} can do ${this.art}`);
+            }
+        }
+        //create object of person 
+        var p1 = new Person('Ankit',true);
+        p1.walk();
+        p1.talk();
+        
+        //create object of Artist class
+        var a2 = new Artist('Arjit singh',true,'Singing');
+        a2.walk();
+        a2.talk();
+        a2.skill();
+
+        var s3 = new Student('Rajan joshi',true,'gujarati');
+        // s3.skill();
+        s3.read();
+        s3.write();
+        
+    </script>
+</body>
+</html>

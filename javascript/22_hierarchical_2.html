@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>working with hierarchical inheritance</h1>
+    <hr>
+
+    <script>
+        const PI  = 3.141516; //READ ONLY VARIABLE
+        class Shape 
+        {
+            //create constant variable
+            getPi()
+            {
+                // return 3.14; do not use literals, use variable/constant
+                return PI;
+            }
+            getSquare(num)
+            {
+                let area = num * num;
+                return area;
+            }
+
+        }
+        //create Circle class
+        class Circle extends Shape 
+        {
+            constructor(radius)
+            {
+                super(); //required
+                //constructor is used to create property variable
+                this.radius = radius;
+                console.log('circle class constructor called...');
+            }
+            getArea()
+            {
+                //formula pi*radius*radius
+                let area = super.getPi() * super.getSquare(this.radius);
+                return area;
+            }
+        }
+        class Ellipse extends Shape 
+        {
+            constructor(major,minor)
+            {
+                super();
+                this.major = major;
+                this.minor = minor;
+            }
+            getArea()
+            {
+                let area = super.getPi() * this.major * this.minor;
+                return area;
+            }
+        } 
+
+
+        //create object of Ellipse 
+        var e1 = new Ellipse(20,40);
+
+        console.log("Area of Ellipse = " + e1.getArea());
+    </script>
+</body>
+</html>
