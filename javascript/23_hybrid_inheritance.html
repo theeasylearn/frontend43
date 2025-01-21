@@ -7,7 +7,7 @@
 </head>
 <body>
     
-    <h1>working with hierarchical inheritance</h1>
+    <h1>working with hybrid inheritance</h1>
     <hr>
 
     <script>
@@ -44,25 +44,46 @@
                 return area;
             }
         }
-        class Ellipse extends Shape 
+        class Sphere extends Circle 
         {
-            constructor(major,minor)
+            constructor(radius)
             {
-                super();
-                this.major = major;
-                this.minor = minor;
+                super(radius);
+                console.log('Sphere area is calculated...');
             }
-            getArea()
+            getSurfaceArea()
             {
-                let area = super.getPi() * this.major * this.minor;
+                let area = 4 * super.getArea();
                 return area;
             }
-        } 
+        }
+        class Cylinder extends Circle
+        {
+            constructor(radius,height)
+            {
+                super(radius); //call parent class constructor
+                this.height = height; //create property variable
+            }
+            getVolume()
+            {
+                let volume = super.getArea() * this.height;
+                return volume;
+            }
+        }
+        var s = new Shape();
+        console.log(s.getPi());
+        console.log(s.getSquare(10));
 
+        var c = new Circle(250);
+        console.log(c.getArea());
 
-        //create object of Ellipse 
-        var e1 = new Ellipse(20,40);
-        console.log("Area of Ellipse = " + e1.getArea());
+        var sp = new Sphere(250);
+        console.log(sp.getSurfaceArea());
+
+        var c3 = new Cylinder(100,25);
+        var volume = c3.getVolume();
+        console.log("area of cylinder ",volume);
+
     </script>
 </body>
 </html>
