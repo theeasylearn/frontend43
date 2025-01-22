@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>check object has property or not</h1>
+    <script>
+        let book = {
+            name: "Rich dad poor dad",
+            price: 300,
+            author: "Kiaoski"
+        }
+        console.log(book);
+        //check object has name property of not
+        //1st method
+        if (book.name === undefined)
+            alert('book object has no name property');
+        else
+            alert('book has name property');
+
+        if (book.isbn !== undefined)
+            alert('book has isbn property ');
+        else
+            alert('book has no isbn property');    
+
+        //2nd method
+        if("author" in book)
+            alert('book has author');
+        else 
+            alert('book has no author property');
+        
+    </script>
+</body>
+
+</html>
