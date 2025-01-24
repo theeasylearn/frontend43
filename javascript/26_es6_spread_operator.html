@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>ES6 spread operator</h1>
+    <hr>
+
+    <script>
+        //create two array
+        var fruits = ['banana', 'mango', 'pinapple', 'graps', 'orange'];
+        var vegis = ['potato', 'tomato', 'onion', 'garlic', 'chilly'];
+        console.log(fruits, vegis);
+
+        //merge this two array into third array
+        var fridge = [...fruits, ...vegis];
+        console.log(fridge);
+
+        //create two object 
+        // Object 1
+        var object1 = {
+            name: "Alice",
+            age: 25,
+            city: "New York",
+            profession: "Engineer",
+            hobby: "Painting",        // Unique property for object1
+            favoriteFood: "Pizza"     // Unique property for object1
+        };
+
+        // Object 2
+        var object2 = {
+            name: "Bob",
+            age: 30,
+            city: "London",
+            profession: "Doctor",
+            favoriteSport: "Football",  // Unique property for object2
+            petName: "Charlie"          // Unique property for object2
+        };
+
+        console.log(object1);
+        console.log(object2);
+
+        //merge two object into new
+        var family = {...object1,...object2};
+        console.log(family);
+    </script>
+</body>
+
+</html>

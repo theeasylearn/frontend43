@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>functional binding</h1>
+    <hr/>
+
+    <script>
+        var math = {
+            //property variable
+            num1: 10,
+            num2: 3,
+            add:function()
+            {
+                document.write(" <br/> addition = " + (this.num1 + this.num2));
+            },
+            sub:function()
+            {
+                document.write(" <br/> subtraction = " + (this.num1 - this.num2));
+            },
+            mul:function()
+            {
+                document.write(" <br/> multiplication = " + (this.num1 * this.num2));
+            },
+            div:function()
+            {
+                document.write(" <br/> division = " + (this.num1 / this.num2));
+            }
+        }
+
+        math.add();
+        math.sub();
+        math.mul();
+        math.div();
+
+        //wrong way to create alias
+        // var add = math.add;
+        // var sub = math.sub;
+        // var mul = math.mul;
+        // var div = math.div;
+
+        //right way to create alias
+        var add = math.add.bind(math);
+        var sub = math.sub.bind(math);
+        var mul = math.mul.bind(math);
+        var div = math.div.bind(math);
+
+
+        add();
+        sub();
+        mul();
+        div();
+    </script>
+</body>
+</html>
