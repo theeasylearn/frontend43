@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add array into object</h1>
+    <script>
+        var result = []; //empty array
+        console.log('vehicle = ', result);
+        //add objects 
+        var object1 = {
+            error:'input is missing'
+        };
+
+        var object2 = {
+            total:0,
+        };
+        
+        var object3 = {
+            name:'Ankit',
+            surname:'Patel',
+            age:38
+        };
+        //add object into array
+        // result.push(object1);
+        
+        //1st method
+        result = [...result,object2];
+        result = [...result,object3];
+        console.log('vehicle = ', result);
+        //2nd method
+        result.unshift(object1);
+
+    </script>
+</body>
+</html>

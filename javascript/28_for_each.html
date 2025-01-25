@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning Books</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .book-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .book-table th,
+        .book-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+
+        .book-table th {
+            background-color: #f4f4f4;
+            text-transform: uppercase;
+        }
+
+        .book-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .book-table tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Machine Learning Books</h1>
+    <table class="book-table">
+        <thead>
+            <tr>
+                <th>Book Name</th>
+                <th>Author</th>
+                <th>Price</th>
+                <th>ISBN No</th>
+                <th>Pages</th>
+                <th>Publisher</th>
+            </tr>
+        </thead>
+        <tbody id="output">
+         
+        </tbody>
+    </table>
+    <script>
+        function getBooks() {
+            const books = [
+                {
+                    name: "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow",
+                    author: "Aurélien Géron",
+                    price: 699,
+                    isbnNo: "978-1492032649",
+                    pages: 850,
+                    publisher: "O'Reilly Media"
+                },
+                {
+                    name: "Deep Learning",
+                    author: "Ian Goodfellow, Yoshua Bengio, and Aaron Courville",
+                    price: 899,
+                    isbnNo: "978-0262035613",
+                    pages: 775,
+                    publisher: "MIT Press"
+                },
+                {
+                    name: "Machine Learning Yearning",
+                    author: "Andrew Ng",
+                    price: 499,
+                    isbnNo: "978-0999242903",
+                    pages: 118,
+                    publisher: "deeplearning.ai"
+                },
+                {
+                    name: "Python Machine Learning",
+                    author: "Sebastian Raschka and Vahid Mirjalili",
+                    price: 759,
+                    isbnNo: "978-1789955750",
+                    pages: 770,
+                    publisher: "Packt Publishing"
+                },
+                {
+                    name: "The Hundred-Page Machine Learning Book",
+                    author: "Andriy Burkov",
+                    price: 599,
+                    isbnNo: "978-1999579500",
+                    pages: 160,
+                    publisher: "Andriy Burkov Publishing"
+                },
+                {
+                    name: "Deep Learning for Coders with fastai and PyTorch",
+                    author: "Jeremy Howard and Sylvain Gugger",
+                    price: 749,
+                    isbnNo: "978-1492045526",
+                    pages: 624,
+                    publisher: "O'Reilly Media"
+                },
+                {
+                    name: "Introduction to Machine Learning with Python",
+                    author: "Andreas C. Müller and Sarah Guido",
+                    price: 650,
+                    isbnNo: "978-1449369415",
+                    pages: 400,
+                    publisher: "O'Reilly Media"
+                },
+                {
+                    name: "Pattern Recognition and Machine Learning",
+                    author: "Christopher M. Bishop",
+                    price: 799,
+                    isbnNo: "978-0387310732",
+                    pages: 738,
+                    publisher: "Springer"
+                },
+                {
+                    name: "Artificial Intelligence: A Guide to Intelligent Systems",
+                    author: "Michael Negnevitsky",
+                    price: 679,
+                    isbnNo: "978-1408225745",
+                    pages: 504,
+                    publisher: "Pearson"
+                },
+                {
+                    name: "Machine Learning: The Art and Science of Algorithms That Make Sense of Data",
+                    author: "Peter Flach",
+                    price: 699,
+                    isbnNo: "978-1107422223",
+                    pages: 409,
+                    publisher: "Cambridge University Press"
+                }
+            ];
+            return books;
+        }
+        let books = getBooks();
+      
+        console.log(books);
+        for(let index=0;index<books.length;index++)
+        {
+            // <td>${books[index]['name']}</td>
+                // <td>${books[index]['author']}</td>
+                // <td>${books[index]['price']}</td>
+                // <td>${books[index]['isbnNo']}</td>
+                // <td>${books[index]['pages']}</td>
+                // <td>${books[index]['publisher']}</td>
+            let temp = '';
+            for(let key in books[index])
+            {
+                temp += `<td>${books[index][key]}</td>`
+            }    
+            temp = "<tr>" + temp  + "</tr>";
+            document.getElementById('output').innerHTML +=  temp;
+        }
+    </script>
+</body>
+
+</html>
