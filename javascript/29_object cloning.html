@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Object Cloning</h1>
+    <hr/>
+    <script>
+        let user = {
+            name:'Ankit Patel',
+            age: 39,
+            gender : true
+        }
+        //object copy using wrong way 
+        // let user2 = user;
+        //object copy using right way
+        let users2 = {}; //empty object 
+        for(let key in user)
+        {
+            console.log(key,user[key]);
+            users2[key] = user[key];
+        }
+        console.log('before change',user,users2);
+
+        user.name = "Ankit M Patel";
+        users2.name = "Diya Patel";
+        users2.age = 2;
+        console.log('after change',user,users2);
+
+
+    </script>
+</body>
+</html>
