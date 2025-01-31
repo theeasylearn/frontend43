@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Send SMS</h1>
+        <form id="smsForm">
+            <label for="mobile">Mobile Number:</label>
+            <input type="text" id="mobile" name="mobile" placeholder="Enter mobile number" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+
+            <button type="button" onclick="sendSMS();">Send SMS</button>
+        </form>
+    </div>
+    <script src="cookies.js"></script>
+    <script>
+        //create function to send sms
+        var count = 0;
+        function sendSMS() {
+            console.log(getCookie['count']);
+            if (getCookie('count') === undefined) {
+                alert()
+                setCookie('count',0);
+            }
+
+            if (getCookie('count') < 3) {
+                setCookie('count',parseInt(getCookie('count')) + 1);
+                alert('we have send sms count = ' + getCookie('count'));
+            }
+            else
+                alert('we have not send sms');
+        }
+    </script>
+</body>
+
+</html>

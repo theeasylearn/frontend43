@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>working with cookies</h1>
+    <script src="cookies.js"></script>
+    <script>
+        //create cookies variable
+        setCookie('email','theeasylearn@gmail.com');
+
+        //create cookies for 10 days 
+        setCookie('city','bhavnagar',10);
+
+        //display cookies
+        document.write("email = " + getCookie('email'));
+        document.write("<br/> city = " + getCookie('city'));
+
+        //change cookies value 
+        setCookie("email","ankit3385@gmail.com");
+        setCookie('city','gandhinagar',10);
+
+        document.write("<br/> email = " + getCookie('email'));
+        document.write("<br/> city = " + getCookie('city'));
+
+    </script>
+</body>
+</html>
