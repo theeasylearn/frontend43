@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+function layout(content){
+    var output = `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -21,14 +22,18 @@
 <body>
     <nav>
         <ul>
-            <li><a href="/">home</a></li>
+            <li><a href="/home">home</a></li>
             <li><a href="/contact">contact</a></li>
             <li><a href="/about">about</a></li>
             <li><a href="/login">login</a></li>
         </ul>
     </nav>
     <h1>
-        about page
+        ${content}
     </h1>
 </body>
-</html>
+</html>`;
+    return output;
+}
+
+module.exports.menu = layout ; 
