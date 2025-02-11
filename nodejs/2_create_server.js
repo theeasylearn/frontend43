@@ -1,5 +1,6 @@
 var http = require("http")
 var server = http.createServer(function(request,response){
+    response.writeHead(200,{'content-type':'text/html'});
     console.log("a new request is comming....");
     // console.log(a);
     // console.log(b);
