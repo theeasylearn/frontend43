@@ -9,11 +9,11 @@ var server = http.createServer(function(request,response){
     console.log("a new request is comming....");
     // console.log(myurl);
     var m1 = myurl.parse(request.url,true);
-    // console.log(m1);
-    // console.log(m1.query);
-    // console.log(m1.query.name);
-    // console.log(m1.query.email);
-    // console.log(m1.pathname);
+    console.log(m1);
+    console.log(m1.query);
+    console.log(m1.query.name);
+    console.log(m1.query.email);
+    console.log(m1.pathname);
     var name = m1.query.name ; 
     response.write(`<h1>${name}</h1>`);
     response.end();
