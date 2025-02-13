@@ -12,7 +12,7 @@ var routes = [
     { "from": "mumbai", "to": "vadodara", "type": "sleeper", "time": "2:15 am" },
     { "from": "ahmedabad", "to": "rajkot", "type": "ac", "time": "4:45 pm" }
   ]
-  
+
 
 var server = http.createServer(function(request,response){
     response.writeHead(200,{'content-type':'text/html'});
