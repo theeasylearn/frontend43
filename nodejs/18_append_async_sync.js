@@ -24,7 +24,7 @@ var server = http.createServer(function(request,response){
                 else{
                     response.write(`content added to ${filename}`);
                     var d1 = new Date;
-                    var fulldate = d1.getDate() + "-"+ d1.getMonth() +"-"+ d1.getFullYear() ;
+                    var fulldate = d1.getDate() + "-"+( d1.getMonth()+1) +"-"+ d1.getFullYear() ;
                     var fulltime = d1.getSeconds() +"-" + d1.getMinutes() +"-"+d1.getHours();
 
                     var con = "\n"+fulldate +" "+fulltime+" "+filename ;
