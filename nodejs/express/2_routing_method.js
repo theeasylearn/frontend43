@@ -11,7 +11,7 @@ var list = [{ 'name': 'ghi', 'price': 99, 'author': 'pqr' }];
 app.post("/book", function (request, response) {
     let name = request.body.name;
     let price = request.body.price;
-    let author = request.body.author;
+    let au   thor = request.body.author;
     if (name === undefined || price === undefined || author === undefined)
         response.send('name author price are required inputs');
     else {
