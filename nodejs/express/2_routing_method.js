@@ -5,13 +5,17 @@ var app = express();
 app.use(express.urlencoded({ 'extended': true }))
 app.use(bodyParser.json());
 //create empty array
-var list = [{ 'name': 'ghi', 'price': 99, 'author': 'pqr' }];
+var list = [
+    { 'name': 'abc', 'price': 99, 'author': 'pqr' },
+    { 'name': 'qwe', 'price': 111, 'author': 'pqr' },
+    { 'name': 'yui', 'price': 222, 'author': 'pqr' },
+];
 //define routes 
 // create route to insert book 
 app.post("/book", function (request, response) {
     let name = request.body.name;
     let price = request.body.price;
-    let au   thor = request.body.author;
+    let author = request.body.author;
     if (name === undefined || price === undefined || author === undefined)
         response.send('name author price are required inputs');
     else {
@@ -23,13 +27,54 @@ app.post("/book", function (request, response) {
 
 //create route to delete book 
 app.delete("/book", function (request, response) {
-    list.pop(); //remove value from the end of list
-    response.send('Book Deleted');
+    let name = request.body.name; //yui
+    if (name === undefined)
+        response.send('input missing');
+    else {
+        var isFound = false;
+        var temp = list.filter((book) => {
+            if (name !== book.name)
+                return book
+            else
+                isFound = true
+        })
+        if (isFound) {
+            list = temp; //now list has 1 less object
+            response.send('Book Deleted');
+        }
+        else {
+            response.send('Book not found');
+        }
+    }
+
 });
 
 //create route to edit book 
 app.put("/book", function (request, response) {
-    response.send('Book edited.');
+    let name = request.body.name;
+    let author = request.body.author;
+    let price = request.body.price;
+    if (name === undefined || author === undefined || price === undefined)
+        response.send('input missing');
+    else {
+        var isFound = false;
+        var temp = list.map((book) => {
+            if (name === book.name) {
+                //book found
+                isFound = true;
+                return { 'name': name, 'price': price, 'author': author }
+            }
+            else
+                return book
+        });
+        console.log(temp);
+        if (isFound) {
+            list = temp;
+            response.send('Book updated');
+        }
+        else
+            response.send('book not found');
+    }
 });
 
 //create get all books 
