@@ -1,0 +1,59 @@
+sql query
+---------------------------------
+1) create a table
+    create table table_name(
+        field datatype etc..
+    )
+
+    creating users table
+    CREATE TABLE users(
+        id int PRIMARY KEY AUTO_INCREMENT ,
+        name varchar(50),
+        age int,
+        address varchar(200)
+    )
+
+2) detete a table
+    drop table table_name
+    drop table users
+
+3) rename a table
+    rename table old_table to new_table name
+    rename table students to teachers
+
+---------------------------------------------------
+1) insert
+    add row to table
+    1) insert into table_name(fields...) values(data...) 
+    insert into person(name,dob,salary,gender,photo) values("samarth","2004-12-01",20000,1,"user.jpeg") ;
+
+    2) insert into table_name values(data...)
+    insert into person values("","samarth","2004-12-01",20000,1,"user.jpeg") ;
+
+    insert multiple records
+    INSERT INTO person (name, dob, salary, gender, photo) VALUES
+    ("Samarth", "2004-12-01", 20000, 1, "user1.jpeg"),
+    ("Aarav", "1998-07-15", 35000, 1, "user2.jpeg"),
+    ("Neha", "1995-03-22", 40000, 2, "user3.jpeg"),
+    ("Rohan", "2000-11-05", 28000, 1, "user4.jpeg"),
+    ("Priya", "1997-09-10", 50000, 2, "user5.jpeg"),
+    ("Vikram", "1992-06-30", 60000, 1, "user6.jpeg"),
+    ("Ananya", "1999-02-18", 32000, 2, "user7.jpeg"),
+    ("Kunal", "2001-05-25", 27000, 1, "user8.jpeg"),
+    ("Simran", "1996-08-12", 45000, 2, "user9.jpeg"),
+    ("Rahul", "1993-04-20", 55000, 1, "user10.jpeg");
+
+2) delete
+    delete from table_name where condition ; 
+
+    delete row whos id is 4
+    DELETE FROM person WHERE id=4 ;
+
+    delete row whos name is "devarsh"
+    DELETE FROM person WHERE name="devarsh";
+
+    delete records of female
+    DELETE FROM person WHERE gender=2;
+
+3) update
+4) select
