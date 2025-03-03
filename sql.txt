@@ -21,6 +21,10 @@ sql query
     rename table old_table to new_table name
     rename table students to teachers
 
+4)  truncate table 
+    truncate table command is used to delete all rows from table and reset primary key to 1 
+    truncate table tablename 
+    truncate table person 
 ---------------------------------------------------
 1) insert
     add row to table
@@ -55,5 +59,47 @@ sql query
     delete records of female
     DELETE FROM person WHERE gender=2;
 
+    
+
 3) update
+   update command is used to change existing row's column value. we can change one more column value using update command 
+
+   syntax 
+   update tablename set field=value[,field2=value,field3=value] [where condition]
+
+   update all person salary by 99 rupees 
+   update person set salary = salary + 99
+
+   increase all person salary by 1 rupees of those person whose salary is below 30000
+   update person set salary = salary + 1 where salary<30000 
+
+   decrease salary by 99 rupees of those person whose id are 2 or 3 or 5 or 6 or 9  or 10
+   update person set salary= salary - 99 where id=2 or id=3 or id=5 or id=6 or id=9 or id=10
+                or 
+   update person set salary= salary + 99 where id in(2,3,5,6,9,10)
+
+   update name to 'Divya Kurmari' gender to 0 and birtdate to 01-01-1984 of person whose id is 2 
+   update person set name='Divya Kurmari',gender=0,dob='1984-01-01' where id = 2
+
 4) select
+    select command is used to fetch records from tables. one can fetch all/selected fields, all/selected records can display records in specified order.
+
+    syntax
+    select *|<fieldlist> from <table> [where <condition>] [group by <fieldname>] [having <condition>]
+    [order by <field>]  [limit position,offset]
+
+    fetch all fields of all rows of customers 
+    select * from customers
+
+    fetch customerNumber,customerName,city,state,country of all customers
+    select customerNumber,customerName,city,state,country from customers
+
+    fetch customerNumber,customerName,city,state,country of customers who are from usa 
+    select customerNumber,customerName,city,state,country from customers where country='USA'
+
+    fetch customerNumber,customerName,city,state,country,creditLimit of customers who is creditLimit>100000
+
+    select customerNumber,creditLimit,customerName,city,state,country from customers where creditLimit>1000000
+
+    
+
