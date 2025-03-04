@@ -101,5 +101,72 @@ sql query
 
     select customerNumber,creditLimit,customerName,city,state,country from customers where creditLimit>1000000
 
-    
+	 fetch customerNumber,customerName,creditLimit of customers who is creditLimit between 1 and 2 lakh 
+	 
+	 select customerNumber,customerName,creditLimit from customers where creditLimit>=100000 and creditLimit<=200000
+	
+			or 
+	select customerNumber,customerName,creditLimit from customers where creditLimit between 100000 and 200000
 
+	fetch customerName,country of those customers who are from usa or france or Germany
+	
+	select customerName,country from customers where country='usa' or country='france' or country='germany'
+	
+	or 
+	select customerName,country from customers where country in ('USA','France','germany')
+	
+	fetch customerName,country of those customers who are not from usa or france or Germany
+
+	select customerName,country from customers where country!='usa' and  country!='france' and country!='germany'
+	
+	select customerName,country from customers where country not in ('USA','France','germany')
+
+	fetch customerName of those customer whose name has 'wheels' anywhere (begining, in between, at the end)
+	
+	select customerName from customers where customerName like '%wheels%'
+	
+	fetch customerName of those customer whose name has 'wheels' at begining.
+	select customerName from customers where customerName like 'wheels%'
+	
+	fetch unique countrynames from customers
+	select distinct(country) from customers
+	
+	Aggregate functions
+	-----------------------
+	function which works upon numeric field and always returns single value is called Aggregate functions. 
+	
+	sum
+	used to get total of givn numeric field 
+	
+	avg
+	used to get average of given numeric field 
+	
+	min
+	used to get minimum value of given numeric field 
+	
+	max 
+	used to get maximum value of given numeric field. 
+	
+	count(*)
+	used to count no of rows in table as per condition.
+	
+	findout total payment amount received so far.
+	select sum(amount) from payments
+	
+	findout minimum payment amount received so far.
+	select min(amount) from payments
+	
+	findout maximum payment amount received so far.
+	select max(amount) from payments
+	
+	findout average payment amount received so far.
+	select avg(amount) from payments
+	
+	findout no of (count) payment amount received so far.
+	select count(*) from payments
+	
+	findout total payments, no of payments of customerNumber 112
+	select sum(amount), count(*) from payments where customerNumber=112
+	
+	findout total payment, no of payment of each customers
+	select sum(amount),count(*), customerNumber from payments group by customerNumber
