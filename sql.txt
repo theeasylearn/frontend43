@@ -170,3 +170,47 @@ sql query
 	
 	findout total payment, no of payment of each customers
 	select sum(amount),count(*), customerNumber from payments group by customerNumber
+
+    findout how many customers from each country.
+    select count(*),country from customers group by country
+
+    findout total no of employees 
+    select count(*) from employees
+
+    findout office wise employees count 
+    select count(*),officecode from employees group by officecode
+
+    fetch only those customerNumber who have made less then 50000 Rs payment total 
+    select sum(amount), customerNumber from payments group by customerNumber having sum(amount)<50000
+
+    fetch only those country which has less then 3 customers
+     select count(*),country from customers group by country having count(*)<3
+    
+    fetch all customers data and display them namewise ascending order 
+    select * from customers order by customerName
+
+    fetch customerName,city,state,country display them first countrywise then statewise and then citywise 
+
+    select customerName,city,state,country from customers order by country,state,city
+
+    fetch 10 most recent orders 
+
+    select * from orders order by orderNumber desc limit 0,10
+
+     fetch most recent next 50 orders 
+     select * from orders order by orderNumber desc limit 10,50
+
+    fetch 10 most recent payments 
+    select * from payments order by paymentDate desc limit 0,10
+
+    fetch top 3 hightest payments 
+    select * from payments order by amount desc  limit 0,3
+
+    fetch most senior 5 employees. 
+    select * from employees order by employeeNumber limit 0,5
+
+    fetch most cheapest 3 products 
+    select * from products order by buyPrice limit 0,3
+
+    fetch most expensive 5 products 
+       select * from products order by buyPrice desc limit 0,5
