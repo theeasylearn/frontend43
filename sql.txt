@@ -214,3 +214,44 @@ sql query
 
     fetch most expensive 5 products 
        select * from products order by buyPrice desc limit 0,5
+
+how to fetch data from more then one table at a time?
+
+joins
+-----------------------------
+join operation is required when we require to display data from multiple tables.
+
+1) inner join/ equi join 
+    inner join is used when we want to fetch data from 2 or more tables based upon condition set on common fields 
+
+    what is common field?
+    a field in one table whose type and range of values (domain value) matches with type and range of value in another table.
+    
+    find customerNumber,Name and his each and every payments details.
+
+    select customerNumber,customerName from customers
+    select * from payments
+    
+    now join both query 
+    select customerName,p.* from customers c, payments p where c.customerNumber=p.customerNumber
+
+    display employees Detail and his office location 
+    select * from employees e
+    select addressline1,addressline2,city,postalcode,state,country from offices o 
+
+    now join both query 
+    select e.*,addressline1,addressline2,city,postalcode,state,country from employees e, offices o where e.officecode=o.officecode
+
+
+    display orderNumber,orderDate,Status and customerName & customerNumber of usa customers 
+
+    select orderNumber,orderDate,status from orders o 
+    select customerNumber,customerName,country from customers c where country='usa'
+
+    now join both query 
+    select orderNumber,orderDate,status,c.customerNumber,customerName,country from orders o, customers c where country='usa' and o.customerNumber=c.customerNumber
+
+2) left  join
+    
+3) right  join
+4) full join 
