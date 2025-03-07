@@ -252,6 +252,30 @@ join operation is required when we require to display data from multiple tables.
     select orderNumber,orderDate,status,c.customerNumber,customerName,country from orders o, customers c where country='usa' and o.customerNumber=c.customerNumber
 
 2) left  join
-    
+    left join is used when we need to fetch all rows from left side table and only matching row from right side table. here we use common field to match tables. 
+    fetch customerNumber,customerName of those customer who has never given any order.
+    select customerNumber,customerName from customers c
+    select * from orders o 
+
+    now join them 
+    select c.customerNumber,customerName,o.* from customers c left join orders o on c.customerNumber=O.customerNumber where o.customerNumber is null
+
+    fetch customerNumber, customerName of those customers who has not given any payments 
+    select customerNumber,customerName from customers c
+    select * from payments p 
+
+    now join them 
+     select c.customerNumber,customerName,p.* from customers c left join payments p on c.customerNumber=p.customerNumber where amount is NULL
+     
 3) right  join
+    right join is used when we need to fetch all rows from right side table and only matching row from left side table. here we use common field to match tables. 
+
+    fetch dummy orders 
+    select customerNumber,customerName from customers c, 
+    select * from orders o 
+
+    join them 
+    select c.customerNumber,customerName,o.* from customers c right join orders o on c.customerNumber=o.customerNumber where c.customerNumber is NULL
 4) full join 
+    full join is used when we want to fetch matching unmatching data from both tables. 
+    select e.*, o.* from employees e, offices o
