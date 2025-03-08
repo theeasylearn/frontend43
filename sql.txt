@@ -279,3 +279,34 @@ join operation is required when we require to display data from multiple tables.
 4) full join 
     full join is used when we want to fetch matching unmatching data from both tables. 
     select e.*, o.* from employees e, offices o
+
+what is sub query?
+when we pass result of one query into another query it is called sub query. there are always at least 2 sql queries in sub queries.
+
+1) findout employee whose working with Diane.
+select * from employees e 
+select officecode from employees e where firstname='Diane' 
+now make query 
+select * from employees e where officecode = (select officecode from employees e where firstname='Diane' ) and firstname!='Diane'
+
+2) findout payments above average payment amount 
+select * from payments p 
+select avg(amount) from payments 
+now make query 
+select * from payments p  where amount >= (select avg(amount) from payments )
+
+3) findout customerNumber and Name and payment amount who has made maximum payments
+   select customerNumber,customerName from customers c  
+   select amount from payments p 
+   select max(amount) from payments 
+   select c.customerNumber,customerName,amount from customers c, payments p where c.customerNumber=p.customerNumber and amount = (select max(amount) from payments) 
+
+fetch customerNumber, customerName of those customers who has not given any payments 
+    select customerNumber,customerName from customers c
+    select * from payments p 
+
+    select distinct(customerNumber) from orders o 
+
+     select c.customerNumber,customerName,p.* from customers c left join payments p on c.customerNumber=p.customerNumber where amount is NULL and c.customerNumber in (select distinct(customerNumber) from orders o )
+
+     
