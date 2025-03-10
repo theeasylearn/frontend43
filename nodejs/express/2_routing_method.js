@@ -49,7 +49,8 @@ app.delete("/book", function (request, response) {
 
 });
 
-//create route to edit book 
+//create route to edit product 
+ 
 app.put("/book", function (request, response) {
     let name = request.body.name;
     let author = request.body.author;
