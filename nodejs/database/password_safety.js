@@ -12,4 +12,18 @@ function HashPassword(PlainText) {
         });
     });
 }
+function ComparePassword(PlainTextPassword, HashedPassword) {
+    return new Promise((resolve, reject) => {
+        bcrypt.compare(PlainTextPassword, HashedPassword, function (err, result) {
+            if (err) {
+                console.log('Error in matching password');
+                reject(err);
+            }
+            else {
+                resolve(result);
+            }
+        });
+    });
+}
 module.exports.HashPassword = HashPassword;
+module.exports.ComparePassword = ComparePassword;
