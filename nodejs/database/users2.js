@@ -1,17 +1,7 @@
-var express = require('express');
-var bodyParser = require('body-parser');
 var connection = require('./connection');
 var pwd = require('./password_safety');
-var app = express();
-//use middlewares (below 2 lines are required to accept input submitted via post/put/delete method)
-app.use(express.urlencoded({ 'extended': true }))
-app.use(bodyParser.json());
-//used to register user 
-//127.0.0.1:5000/users/register
-//method : post
-//input: email,mobile,password (required)
-//output
-app.post("/users/register", function (request, response) {
+
+module.exports.register = function (request, response) {
     var { email, mobile, password } = request.body;
     if (email === undefined || password === undefined || mobile === undefined)
         response.json([{ 'error': 'required input missing, kindly pass email, mobile, password' }]);
@@ -34,8 +24,8 @@ app.post("/users/register", function (request, response) {
         });
 
     }
-});
-app.post("/users/login", function (request, response) {
+}
+module.exports.login = function (request, response) {
     var { email, password } = request.body;
     if (email === undefined || password === undefined)
         response.json([{ 'error': 'required input missing, kindly pass email & password' }]);
@@ -65,10 +55,9 @@ app.post("/users/login", function (request, response) {
             }
         });
     }
-});
+}
 
-//change password 
-app.post("/users/change-password", function (request, response) {
+module.exports.ChangePassword = function (request, response) {
     var { id, password, newPassword } = request.body;
     if (id === undefined || password === undefined || newPassword === undefined)
         response.json([{ 'error': 'required input missing, kindly pass id & password and new password' }]);
@@ -108,10 +97,9 @@ app.post("/users/change-password", function (request, response) {
             }
         });
     }
-});
+}
 
-//forgot password
-app.post('/users/forgot-password', function (request, response) {
+module.exports.ForgotPassword = function (request, response) {
     /*
         1) check user given email found in user table or not 
         2) if not found return message in json format 
@@ -160,7 +148,4 @@ app.post('/users/forgot-password', function (request, response) {
             }
         });
     }
-});
-
-app.listen(5000);
-console.log('ready to accept request');
+}
