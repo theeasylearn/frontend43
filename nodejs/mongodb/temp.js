@@ -1,16 +1,13 @@
-//delete document
 var { dbPromise } = require('./connection');
-var updatedObject = {$set:{name:'nikunj',surname:'bhatt',age:42}};
-var condition = {name:'kartik'};
+
 dbPromise.then((database) => {
-    database.collection('person').deleteOne(condition,updatedObject, function (error, response) {
+    database.collection('person').find({}).toArray(function (error, documents) {
         if (error != null) {
-            console.log('There is some error in deleting the document:', error.message);
+            console.log('There is some error in fetching the documents:', error.message);
         } else {
-            console.log('person has been deleted successfully:');
+            console.log('Fetched persons:', documents);
         }
     });
-
 }).catch((error) => {
     console.log(error);
 });
