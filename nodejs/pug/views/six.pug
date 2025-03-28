@@ -1,0 +1,42 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Branch Information
+    style.
+      body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      text-align: center;
+      }
+      table {
+      width: 50%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      border: 1px solid #ddd;
+      }
+      th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+      }
+      th {
+      background-color: #f4f4f4;
+      }
+  body
+    h2 Branch Information
+    table
+      tbody
+        tr
+          th Branch Name
+          td #{name}
+        tr
+          th Mobile
+          td #{mobile}
+        tr
+          th Email
+          td=email
+        tr
+          th Address
+          td=address
