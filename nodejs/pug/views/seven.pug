@@ -1,0 +1,15 @@
+doctype html 
+html 
+    head
+        title Conditional Statement in pug 
+    body 
+        h1 conditional statement 
+        table(border='2px',align='center',width='300px') 
+            tr 
+                td 
+                    if(personGender == 'male')  
+                        welcome Mr #{personName}
+                    else 
+                        welcome Miss/Mrs #{personName}
+
+                
