@@ -1,0 +1,4 @@
+1) Create a pug that use Bootstrap to display single cricketer as object
+    display Name, dob, match, runs, 50s, 100s, Average 
+2) Create a pug that use Bootstrap to display 10 cricketer as list of objects
+    each has player Name, dob, match, runs, 50s, 100s, Average 
