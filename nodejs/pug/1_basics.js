@@ -1,6 +1,6 @@
 var express = require('express')
+var connection = require('../database/connection');
 var app = express()
-
 app.set("view engine", "pug");
 app.set("views", "views");
 //create route 
@@ -85,12 +85,12 @@ app.get("/country", function (request, response) {
             "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey",
             "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Vanuatu",
             "Vatican City", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"]
-        
+
     });
 });
 
 app.get("/movie", function (request, response) {
-    
+
     const top100Movies = [
         "The Shawshank Redemption (1994)",
         "The Godfather (1972)",
@@ -192,22 +192,22 @@ app.get("/movie", function (request, response) {
         "The Kid (1921)",
         "Scarface (1983)",
         "The Apartment (1960)"
-      ];
-    response.render('nine',{
+    ];
+    response.render('nine', {
         movies: top100Movies
     });
 });
 
 app.get("/book", function (request, response) {
-    
-    let book = {name:'The Atomic Habit',author:'James clear',price:500};
-    response.render('ten',{
-        detail : book
+
+    let book = { name: 'The Atomic Habit', author: 'James clear', price: 500 };
+    response.render('ten', {
+        detail: book
     });
 });
 
 app.get("/movie2", function (request, response) {
-    
+
     const top100Movies = [
         { name: "The Shawshank Redemption", year: 1994, rating: 9.3 },
         { name: "The Godfather", year: 1972, rating: 9.2 },
@@ -285,10 +285,23 @@ app.get("/movie2", function (request, response) {
         { name: "The Kid", year: 1921, rating: 8.3 },
         { name: "Scarface", year: 1983, rating: 8.3 },
         { name: "The Apartment", year: 1960, rating: 8.3 }
-      ];
-    response.render('eleven',{
-        list : top100Movies /* top100Movies is list of object(100) */
+    ];
+    response.render('eleven', {
+        list: top100Movies /* top100Movies is list of object(100) */
     });
 });
 
+app.get("/person", function (request, response) {
+    var sql = "SELECT id,name,date_format(dob,'%a %d-%m-%Y') as dob,salary,CASE WHEN gender = 1 THEN 'Male' WHEN gender = 2 THEN 'Female' END AS gender,photo FROM `person`";
+    connection.con.query(sql, function (error, result) {
+        if (error != null)
+            response.render('error',{ 'error_message': 'oops, something went wrong, contact developer' });
+        else 
+        {
+            response.render('twelve',{
+                table:result
+            });
+        }
+    })
+});
 app.listen(5000, () => console.log('ready to accept request...'));
