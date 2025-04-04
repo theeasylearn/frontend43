@@ -1,0 +1,22 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title My Website
+    link(href='/css/bootstrap.min.css', rel='stylesheet')
+  body
+    // Navigation Menu
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
+      .container
+        a.navbar-brand(href='index.html') My Website
+        button.navbar-toggler(type='button', data-bs-toggle='collapse', data-bs-target='#navbarNav')
+          span.navbar-toggler-icon
+        #navbarNav.collapse.navbar-collapse
+          ul.navbar-nav
+            li.nav-item
+              a.nav-link(href='/myhome') Home
+            li.nav-item
+              a.nav-link(href='/myaboutus') About Us
+            li.nav-item
+              a.nav-link(href='/mycontactus') Contact Us

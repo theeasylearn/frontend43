@@ -1,0 +1,18 @@
+include myheader.pug
+// Page Content
+.container.mt-4
+    .jumbotron
+    h1 Contact Us
+    p If you have any questions, feel free to reach out to us.
+    form
+        .mb-3
+        label.form-label(for='name') Name
+        input#name.form-control(type='text', placeholder='Your Name')
+        .mb-3
+        label.form-label(for='email') Email
+        input#email.form-control(type='email', placeholder='Your Email')
+        .mb-3
+        label.form-label(for='message') Message
+        textarea#message.form-control(rows='4', placeholder='Your Message')
+        button.btn.btn-primary(type='submit') Send Message
+include myfooter.pug

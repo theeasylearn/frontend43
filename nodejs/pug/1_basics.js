@@ -1,8 +1,12 @@
-var express = require('express')
+var express = require('express');
+var path = require('path');
+
 var connection = require('../database/connection');
 var app = express()
 app.set("view engine", "pug");
 app.set("views", "views");
+//set path 
+app.use(express.static(path.join(__dirname, 'public')));
 //create route 
 app.get('/intro', function (request, response) {
     response.render('one');
@@ -304,4 +308,17 @@ app.get("/person", function (request, response) {
         }
     })
 });
+
+app.get("/myhome",function(request,response){
+    response.render('demo_home');
+});
+
+app.get("/myaboutus",function(request,response){
+    response.render('demo_aboutus');
+});
+
+app.get("/mycontactus",function(request,response){
+    response.render('demo_contactus');
+});
+
 app.listen(5000, () => console.log('ready to accept request...'));
