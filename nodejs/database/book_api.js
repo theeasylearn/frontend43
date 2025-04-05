@@ -26,9 +26,11 @@ app.post("/book",function(request,response){
     }    
     else 
     {
-        var sql=`insert into book (name,author,price) values ('${name}','${author}','${price}')`;
+        //make sql statement SQL Injection proof 
+        var values = [name,author,price];
+        var sql=`insert into book (name,author,price) values (?,?,?)`;
         //run query
-        connection.con.query(sql,function(error,result){
+        connection.con.query(sql,values,function(error,result){
             if(error)
                 response.json([{'error':'oops, something went wrong, contact developer'}]);
             else 
@@ -71,8 +73,10 @@ app.delete("/book",function(request,response)
         response.json([{'error':'required input missing, kindly pass id'}]);
     else 
     {
-        var sql = `delete from book where id=${id}`;
-        connection.con.query(sql,function(error,result){
+        //prevent sql injection
+        var values = [id];
+        var sql = `delete from book where id=?`;
+        connection.con.query(sql,values,function(error,result){
             if(error)
                 response.json([{'error':'oops, something went wrong, contact developer'}]);
             else 
@@ -103,8 +107,10 @@ app.put("/book",function(request,response){
     }    
     else 
     {
-        var sql = `update book set name='${name}',author='${author}',price=${price} where id=${id}`;
-        connection.con.query(sql,function(error,result){
+        //make it sql injection proof 
+        var values = [name,author,price,id];
+        var sql = `update book set name=?,author=?,price=? where id=?`;
+        connection.con.query(sql,values,function(error,result){
             if(error)
                 response.json([{'error':'oops, something went wrong, contact developer'}]);
             else 

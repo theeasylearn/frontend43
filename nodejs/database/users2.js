@@ -8,8 +8,9 @@ module.exports.register = function (request, response) {
     else {
         var SecretPassword = pwd.HashPassword(password).then(function (SecretPassword) {
             // console.log(SecretPassword);
-            let sql = `insert into users (email,mobile,password) values ('${email}','${mobile}','${SecretPassword}')`;
-            connection.con.query(sql, function (error, result) {
+            var values = [email,mobile,SecretPassword];
+            let sql = `insert into users (email,mobile,password) values (?,?,?)`;
+            connection.con.query(sql, values, function (error, result) {
                 if (error != null) {
                     if (error.errno === 1062)
                         response.json([{ 'error': 'no' }, { 'success': 'no' }, { 'message': 'email/mobile is already register, use unique email & mobile' }]);
@@ -30,8 +31,10 @@ module.exports.login = function (request, response) {
     if (email === undefined || password === undefined)
         response.json([{ 'error': 'required input missing, kindly pass email & password' }]);
     else {
-        let sql = `select id,password from users where email='${email}'`;
-        connection.con.query(sql, function (error, result) {
+        //let's make this sql command sql injection proof
+        let values = [email];
+        let sql = `select id,password from users where email=?`;
+        connection.con.query(sql,values,function (error, result) {
             if (error) {
                 response.json([{ 'error': 'oops, something went wrong, contact developer' }]);
             }
@@ -62,8 +65,8 @@ module.exports.ChangePassword = function (request, response) {
     if (id === undefined || password === undefined || newPassword === undefined)
         response.json([{ 'error': 'required input missing, kindly pass id & password and new password' }]);
     else {
-        let sql = `select password from users where id=${id}`;
-        connection.con.query(sql, function (error, result) {
+        let sql = `select password from users where id=?`;
+        connection.con.query(sql,[id],function (error, result) {
             if (error) {
                 response.json([{ 'error': 'oops, something went wrong, contact developer' }]);
             }
@@ -80,8 +83,8 @@ module.exports.ChangePassword = function (request, response) {
                         }
                         else {
                             var SecretPassword = pwd.HashPassword(password).then(function (SecretPassword) {
-                                let sql = `update users set password='${SecretPassword}' where id=${id}`;
-                                connection.con.query(sql, function (error2, result) {
+                                let sql = `update users set password=? where id=?`;
+                                connection.con.query(sql,[SecretPassword,id], function (error2, result) {
                                     if (error2 != null) {
                                         response.json([{ 'error': 'oops, something went wrong, contact developer' }]);
                                     }
@@ -113,8 +116,8 @@ module.exports.ForgotPassword = function (request, response) {
         response.json([{ 'error': 'required input missing, kindly pass email' }]);
     }
     else {
-        var sql = `select id from users where email='${email}'`;
-        connection.con.query(sql, function (error, result) {
+        var sql = `select id from users where email=?`;
+        connection.con.query(sql,[email],function (error, result) {
             if (error) {
                 response.json([{ 'error': 'oops, something went wrong, contact developer' }]);
             }
@@ -128,8 +131,8 @@ module.exports.ForgotPassword = function (request, response) {
                     var newPassword = gen.generateRandomPassword();
                     pwd.HashPassword(newPassword).then((hash) => {
                         console.log(newPassword, hash);
-                        var sql2 = `update users set password='${hash}' where email='${email}'`;
-                        connection.con.query(sql2, function (error2, result) {
+                        var sql2 = `update users set password=? where email=?`;
+                        connection.con.query(sql2,[hash,email], function (error2, result) {
                             if (error2) {
                                 response.json([{ 'error': 'oops, something went wrong, contact developer' }]);
                             }
