@@ -28,6 +28,7 @@ sql query
 ---------------------------------------------------
 1) insert
     add row to table
+
     1) insert into table_name(fields...) values(data...) 
     insert into person(name,dob,salary,gender,photo) values("samarth","2004-12-01",20000,1,"user.jpeg") ;
 
@@ -48,12 +49,15 @@ sql query
     ("Rahul", "1993-04-20", 55000, 1, "user10.jpeg");
 
 2) delete
-    delete from table_name where condition ; 
+    
+    used to delete row(s) from table. 
 
-    delete row whos id is 4
+    delete from table_name where <condition> ; 
+
+    delete person whose id is 4
     DELETE FROM person WHERE id=4 ;
 
-    delete row whos name is "devarsh"
+    delete person whose name is "devarsh"
     DELETE FROM person WHERE name="devarsh";
 
     delete records of female
@@ -78,8 +82,8 @@ sql query
                 or 
    update person set salary= salary + 99 where id in(2,3,5,6,9,10)
 
-   update name to 'Divya Kurmari' gender to 0 and birtdate to 01-01-1984 of person whose id is 2 
-   update person set name='Divya Kurmari',gender=0,dob='1984-01-01' where id = 2
+   update name to 'Divya chauhan' birth date to 31-12-1989 of person whose id is 2 
+   update person set name='Divya Chauhan',dob='1989-12-31' where id = 2
 
 4) select
     select command is used to fetch records from tables. one can fetch all/selected fields, all/selected records can display records in specified order.
