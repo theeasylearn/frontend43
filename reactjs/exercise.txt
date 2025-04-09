@@ -1,0 +1,2 @@
+display your name & contact detail in reactjs
+create your resume in reactjs 
