@@ -1,8 +1,7 @@
-//offline bootstrap
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 const root = ReactDOM.createRoot(document.getElementById('root'));
-
+// we have used bootstrap using CDN
 var page = (
     <div className='container'>
         <div className='row'>

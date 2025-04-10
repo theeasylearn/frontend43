@@ -12,9 +12,36 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-h1 
+
+h1 {
+  text-transform: uppercase;
+  border-bottom: 1px solid green;
+  color: blue;
+}
+
+table {
+  background-color: gainsboro;
+}
+
+/* class selector style */
+.red {
+  background-color: red;
+  color: white;
+  padding: 10px;
+}
+
+.green {
+  background-color: green;
+  color: white;
+  padding: 10px;
+}
+.blue {
+  background-color: blue;
+  color: white;
+  padding: 10px;
+}
+.my-font 
 {
-    text-transform: uppercase;
-    border-bottom: 1px solid green;
-    color:blue;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: xx-large;
 }
