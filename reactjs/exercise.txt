@@ -1,2 +1,5 @@
-display your name & contact detail in reactjs
-create your resume in reactjs 
+1) display your name & contact detail in reactjs
+2) create your resume in reactjs 
+----------------------------------------------
+3) create function that display Date in following format (use conditional statement)
+    Friday 11-04-2025
