@@ -3,10 +3,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
 const root = ReactDOM.createRoot(document.getElementById('root'));
-//component function
+var time = new Date();
 function showCurrentTime(time)
 {
-    var time = new Date();
     let message = '';
     //conditional statement
     if(time.getHours()>11)
@@ -24,10 +23,5 @@ function showCurrentTime(time)
 
     return output; //return JSX 
 }
-function updateDateTime()
-{
-    root.render(showCurrentTime());
-    //call function that returns JSX
-}
-setInterval(updateDateTime,1000); 
-//showCurrentTime function will execute at every second
+//call function that returns JSX
+root.render(showCurrentTime(time));
