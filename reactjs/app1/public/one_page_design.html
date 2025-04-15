@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Page Bootstrap 5 Website</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .carousel-item img { height: 500px; object-fit: cover; }
+        section { padding: 60px 0; }
+        footer { background-color: #f8f9fa; padding: 20px 0; }
+    </style>
+</head>
+<body>
+    <!-- Responsive Menu -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow">
+        <div class="container">
+            <a class="navbar-brand" href="#">My Website</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Slider -->
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://picsum.photos/1200/400?random=1" class="d-block w-100" alt="Slide 1">
+            </div>
+            <div class="carousel-item">
+                <img src="https://picsum.photos/1200/400?random=2" class="d-block w-100" alt="Slide 2">
+            </div>
+            <div class="carousel-item">
+                <img src="https://picsum.photos/1200/400?random=3" class="d-block w-100" alt="Slide 3">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- About Us Section -->
+    <section id="about" class="bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">About Us</h2>
+            <p>Our company has been a leader in the industry for over a decade, dedicated to providing top-notch solutions that meet the needs of our diverse clientele. We pride ourselves on our innovative approach, leveraging cutting-edge technology to deliver exceptional results. Our team consists of highly skilled professionals who are passionate about what they do, ensuring that every project is handled with care and precision. From humble beginnings, we have grown into a trusted name, known for reliability and excellence. Our mission is to empower businesses by offering tailored services that drive success and foster long-term partnerships. We value integrity, transparency, and customer satisfaction above all else.</p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <div class="container">
+            <h2 class="text-center mb-4">Our Products</h2>
+            <p>We offer a wide range of products designed to cater to various industries and needs. Each product is crafted with quality and innovation in mind, ensuring that our customers receive only the best. Our flagship product line includes advanced tools that streamline operations and boost productivity. We also provide customizable solutions to fit specific requirements, making us a preferred choice for businesses worldwide. Our commitment to research and development keeps us ahead of the curve, allowing us to introduce new features and improvements regularly. Whether you’re a small startup or a large corporation, our products are designed to scale with you, delivering unmatched performance and reliability every step of the way.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Our Services</h2>
+            <p>Our services are tailored to meet the unique demands of our clients, offering comprehensive solutions that drive growth and efficiency. We specialize in consulting, implementation, and ongoing support, ensuring that every project is a success from start to finish. Our team works closely with clients to understand their goals and challenges, creating strategies that deliver measurable results. We also offer training programs to empower your staff with the skills they need to excel. With a focus on innovation, we incorporate the latest industry trends into our offerings, keeping you competitive in a fast-paced market. Our dedication to excellence ensures that you receive unparalleled service, every time.</p>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container">
+            <h2 class="text-center mb-4">Testimonials</h2>
+            <p>Our clients’ satisfaction is our top priority, and their feedback speaks volumes about our commitment to quality. Over the years, we’ve had the privilege of working with businesses of all sizes, helping them achieve their goals with our solutions. Clients consistently praise our responsiveness, expertise, and ability to deliver on time and within budget. One customer noted that our team transformed their operations, making processes smoother and more efficient. Another highlighted our exceptional support, which made all the difference during a critical project. These testimonials inspire us to keep pushing the boundaries of what’s possible, ensuring that every client receives the best experience and results that exceed expectations.</p>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Contact Us</h2>
+            <p>We’re here to help you succeed, and we’d love to hear from you. Whether you have questions about our products, need assistance with a service, or want to explore partnership opportunities, our team is ready to assist. You can reach us via phone, email, or through our online form, and we promise a prompt response. Our offices are located in the heart of the city, making it easy for you to visit us if needed. We value open communication and strive to build strong relationships with our clients. Let us know how we can support your goals, and we’ll work together to create solutions that drive success.</p>
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="text-center">
+        <div class="container">
+            <p>&copy; 2025 MyWebsite. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS and Popper.js -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
