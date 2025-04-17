@@ -14,3 +14,6 @@
 
 5) Create your resume using class components
 
+6) display IPL point table using reusable class components
+
+7

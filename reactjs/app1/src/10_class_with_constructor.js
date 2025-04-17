@@ -22,14 +22,6 @@ class Schedule extends React.Component {
     this.venue = props.venue;
     console.log('constructor called...');
   }
-  //must create normal function as arrow function if we access this inside function
-  updateMatch = () =>
-  {
-      // alert(this.date);
-      this.date = 'match canceled';
-      //one of the biggest problem of property variable is if we update it, it wont update it's value where it is used
-      alert(this.date);
-  }
   render() {
     console.log('render called...');
     return (<tr>
@@ -39,7 +31,6 @@ class Schedule extends React.Component {
       <td>{this.date}</td>
       <td>{this.time}</td>
       <td>{this.venue}</td>
-      <td><button className='btn btn-danger' onClick={this.updateMatch}>Cancel Match</button></td>
     </tr>);
   }
 }
@@ -60,7 +51,6 @@ class IPL extends React.Component {
                 <th>Date </th>
                 <th>Time</th>
                 <th>Venue</th>
-                <th>Action</th>
               </thead>
               <tbody>
                 {/* use class component Schedule as tag */}
