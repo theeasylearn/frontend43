@@ -16,4 +16,8 @@
 
 6) display IPL point table using reusable class components
 
-7)
+7) Create reactjs user interface for Hotel to get information about occupied and available room. each room has 
+    No, Floor, RoomType, and status(1=occupied,2=available). 
+    there should be button to change status of room 
+
+    use property variable for No, Floor, RoomType and state variable for status 
