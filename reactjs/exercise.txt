@@ -21,3 +21,5 @@
     there should be button to change status of room 
 
     use property variable for No, Floor, RoomType and state variable for status 
+
+8) Create cricket scoreboard update & display interface explain in class.
