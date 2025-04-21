@@ -3,7 +3,9 @@ class CartItem extends React.Component
 {
     constructor(props)
     {
+
         super(props);
+        console.log('cartItem class constructor called ....', props.name);
         //property variable
         this.name = props.name;
         this.price = props.price;
@@ -14,6 +16,12 @@ class CartItem extends React.Component
             itemTotal: parseInt(props.quantity) * parseInt(props.price)
         }
     }
+    //Mouting phase 
+    componentWillMount()
+    {
+        console.log('componentWillMount is called.' + this.name);
+    }
+
     updateQuantity = (qty) => {
         this.setState({
             quantity:qty
@@ -21,6 +29,7 @@ class CartItem extends React.Component
     }
     render()
     {
+        console.log('render method called....',this.name);
         return (  <tr>
             <td>{this.name}</td>
             <td>
@@ -36,6 +45,26 @@ class CartItem extends React.Component
             <td><button className="btn btn-danger btn-sm" onclick="removeItem(this)">Remove</button></td>
         </tr>
        );
+    }
+
+    componentDidMount()
+    {
+        console.log('componentDidMount method is called ....' + this.name);
+    }
+
+    //updating 
+    shouldComponentUpdate(nextProp,nextState)
+    {
+        console.log('shouldComponentUpdate method called...',this.name);
+        return true;
+    }
+    componentWillUpdate(nextProp,nextState)
+    {
+        console.log('componentWillUpdate method called...',this.name);
+    }
+    componentDidUpdate()
+    {
+        console.log('componentDidUpdate method called....',this.name);
     }
 }
 export default class Cart extends React.Component {
