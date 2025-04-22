@@ -1,0 +1,4 @@
+React-toastify
+    React-Toastify allows you to add notifications to your app with ease.
+    npm i react-toastify
+

@@ -1,4 +1,6 @@
 import React from "react";
+// below 2 components must be imported
+import { ToastContainer, toast, Bounce } from 'react-toastify';
 class CartItem extends React.Component
 {
     constructor(props)
@@ -55,8 +57,25 @@ class CartItem extends React.Component
     //updating 
     shouldComponentUpdate(nextProp,nextState)
     {
+
         console.log('shouldComponentUpdate method called...',this.name);
-        return true;
+        if(nextState.quantity<2 || nextState.quantity>10)
+        {
+            toast.error('Quantity must be between 2 to 10', {
+                position: "bottom-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+                transition: Bounce,
+                });
+            return false 
+        }
+        else 
+            return true;
     }
     componentWillUpdate(nextProp,nextState)
     {
@@ -70,6 +89,8 @@ class CartItem extends React.Component
 export default class Cart extends React.Component {
     render() {
         return (<div className="container my-5">
+            <ToastContainer />  
+            {/* required to use <ToastContainer /> otherwise alert will not work */}
             <h1 className="mb-4">Shopping Cart</h1>
             <div className="row">
                 <div className="col-12">
@@ -85,9 +106,9 @@ export default class Cart extends React.Component {
                             </tr>
                         </thead>
                         <tbody>
-                            <CartItem name='IPhone 16 pro max' price='125000' quantity='1'
+                            <CartItem name='IPhone 16 pro max' price='125000' quantity='2'
                             photo='https://picsum.photos/100?random=1' />
-                             <CartItem name='Apple watch' price='85000' quantity='1'
+                             <CartItem name='Apple watch' price='85000' quantity='2'
                             photo='https://picsum.photos/100?random=2' />
                             <CartItem name='Macbook pro' price='215000' quantity='2'
                             photo='https://picsum.photos/100?random=3' />
