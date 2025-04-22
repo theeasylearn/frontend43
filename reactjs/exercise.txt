@@ -22,5 +22,5 @@
 
     use property variable for No, Floor, RoomType and state variable for status 
 
-8) Create cricket scoreboard update & display interface explain in class.
+8)  Create cricket scoreboard update & display interface explain in class.
     make sure that none of the player can play more then 120 balls 
