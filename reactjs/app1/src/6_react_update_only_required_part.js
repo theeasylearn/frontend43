@@ -20,6 +20,7 @@ function showCurrentTime(time)
             <div className='col-6 offset-3'>
                 <h1 className='text-center'>{time.getHours()} : {time.getMinutes()} : {time.getSeconds()} {message}</h1>
             </div>
+            <div className='container'></div>
         </div>
     </div>);
 
